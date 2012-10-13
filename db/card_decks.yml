@@ -1,33 +1,37 @@
 - :name: Learn German
   :description: Most commonly used German words and phrases
   :cards:
-    - :question: Good morning
-      :answer: Guten morgen
-    - :question: Hello
-      :answer: Guten tag
-    - :question: How are you?
-      :answer: Wie geht es ihnen?
-    - :question: What’s that?
-      :answer: Was ist das?
-    - :question: You’re welcome
-      :answer: Bitte schon BIT-teh shone
-    - :question: What time is it?
-      :answer: Wie spat ist es?
+    - :question: Guten morgen
+      :answer: Good morning
+    - :question: Guten tag
+      :answer: Hello
+    - :question: Wie geht es ihnen?
+      :answer: How are you?
+    - :question: Was ist das?
+      :answer: What’s that?
+    - :question: Bitte schon
+      :answer: You’re welcome
+    - :question: Wie spat ist es?
+      :answer: What time is it?
 - :name: Learn Dutch
   :description: Most commonly used Dutch words and phrases
   :cards:
-    - :question: Good morning
-      :answer: Goede morgen
-    - :question: Hello
-      :answer: Hallo
-    - :question: How are you?
-      :answer: Hoe gaat het met jouw?
-    - :question: What’s that?
-      :answer: Wat is dat?
-    - :question: You’re welcome
-      :answer: Alsjeblieft
-    - :question: What time is it?
-      :answer: Hoe laat is het?
+    - :question: Goede morgen
+      :answer: Good morning
+    - :question: Hallo
+      :answer: Hello
+    - :question: Hoe gaat het met jouw?
+      :answer: How are you?
+    - :question: Wat is dat?
+      :answer: What’s that?
+    - :question: Alsjeblieft
+      :answer: You’re welcome
+    - :question: Hoe laat is het?
+      :answer: What time is it?
+    - :question: ik eet geen vlees
+      :answer: i dont eat meat
+    - :question: zit hier zuivel in?
+      :answer: is there dairy in this?
 
 
 
