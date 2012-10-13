@@ -5,6 +5,11 @@ class LoginController < ApplicationController
 
   def create
     @login = Login.new params[:login]
-    session[:current_user] = @login.login
+    @user = @login.login
+    if @user.nil?
+      return render 'new'
+    end
+
+    session[:current_user] = @user.key
   end
 end
