@@ -9,4 +9,5 @@ class User
   timestamps!
 
   has_secure_password
+  many :card_decks, :class_name => "CardDeck"
 end
