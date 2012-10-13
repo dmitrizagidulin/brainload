@@ -6,7 +6,6 @@ task :seed do
   seed_data = YAML.load(IO.read(File.dirname(__FILE__) + '/../../db/card_decks.yml'))
   seed_data.each do |card_deck|
 
-
     @card_deck = CardDeck.new(:user_key => @user.key,
                               :name => card_deck[:name],
                               :description => card_deck[:description])

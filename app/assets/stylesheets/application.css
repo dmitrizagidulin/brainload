@@ -6,12 +6,12 @@ body {
 .brand {
   font-size: 150%;
 }
-.card_deck_face_description {
+.card_face_description {
     font-style: italic;
     visibility:hidden;
 }
-.card_deck_face_title {
-    border-bottom: 1px solid #2c2c29;
+.card_face_title {
+    border-bottom: 1px solid #ffffff;
     width: 150px;
     height:20px;
 }
@@ -26,14 +26,16 @@ body {
     background-color: #eeeeff;
     border: 1px solid #2c2c29;
 }
+
 .card_face:hover {
-    background-color: #eee;
+    background-color: #ffffff;
     color: #000;
-    border: 15px dashed red;
 }
 
-.card_face_front {
-    background-color: #eeeeff;
+
+.card_face_front:hover {
+    background-color: #ffffff;
+
 }
 .card_face_back {
     display:none;
