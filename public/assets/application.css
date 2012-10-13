@@ -34,7 +34,9 @@ body {
 .card_face_front a:hover {
     text-decoration: none;
 }
-
+.card_face_back a:hover {
+    text-decoration: none;
+}
 .card_face_front:hover {
     background-color: #ffffff;
     text-decoration: none;
