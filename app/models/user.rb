@@ -4,8 +4,9 @@ class User
 
   property :email, String
   key_on :email
-  
+
   property :password_digest, String, presence: true
+  timestamps!
 
   has_secure_password
 end
