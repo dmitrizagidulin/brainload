@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class UserTest < TestHelper
   test 'user email' do
   	address = 'user-email@test.invalid'
 
@@ -17,5 +17,6 @@ class UserTest < ActiveSupport::TestCase
   	assert u.save
 
 	assert User.find(address).authenticate(password)
+
   end
 end
