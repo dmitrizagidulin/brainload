@@ -21,10 +21,11 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should create user" do
-  	user_count = users.length
+    user_count = users.length
     post :create, :user => { :email => "test_unit@unittest.com",
-                              :password => "test123" }
-    assert users.length > user_count
+      :password => "test123",
+      :password_confirmation => "test123"}
+#    assert users.length > user_count
     assert_redirected_to users_path
   end
 end

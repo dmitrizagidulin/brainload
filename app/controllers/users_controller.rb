@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 	def create
+		unless params
+			redirect_to login_url
+		end
 		@user = User.new(params[:user])
 			
 		respond_to do |format|
