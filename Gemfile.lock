@@ -121,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
+  execjs
   jquery-rails
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
