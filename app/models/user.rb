@@ -1,8 +1,11 @@
 class User
   include Ripple::Document
   include ActiveModel::SecurePassword
+
+  property :email, String
+  key_on :email
   
-  property :email, String, presence: true
+  property :password_digest, String, presence: true
 
   has_secure_password
 end
