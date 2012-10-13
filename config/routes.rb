@@ -1,4 +1,7 @@
 R12Team241::Application.routes.draw do
+  match 'login' => 'login#new', via: :get
+  match 'login' => 'login#create', via: :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
