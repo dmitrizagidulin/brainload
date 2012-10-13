@@ -1,0 +1,23 @@
+- :name: Learn German
+  :description: Top 100 most commonly used German words
+  :cards:
+    - :question: Good morning
+      :answer: Guten morgen
+    - :question: Hello
+      :answer: Guten tag
+    - :question: How are you?
+      :answer: Wie geht es ihnen?
+    - :question: "sich"
+      :answer: '"himself, itself, yourself"'
+    - :question: "als"
+      :answer: '"as, than, when"'
+    - :question: "werden (wurde, wird)"
+      :answer: '"become, get"'
+    - :question: wir
+      :answer: we
+    - :question: "soll (sollen, sollte, etc.)"
+      :answer: "should, ought to"
+    - :question: "diese (dieser, dieses, etc.)"
+      :answer: "this, these"
+    - :question: "will (wollen, willst, etc.)"
+      :answer: '"wants" ("to want, want," etc.)'

@@ -1,4 +1,7 @@
 R12Team241::Application.routes.draw do
+  resources :card_decks
+  resources :cards
+
   match 'login' => 'login#new', via: :get
   match 'login' => 'login#create', via: :post
 

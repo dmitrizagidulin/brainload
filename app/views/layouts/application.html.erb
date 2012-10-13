@@ -26,13 +26,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">R12Team241</a>
+          <a class="brand" href="#">Flasher</a>
           <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
+            <!--<ul class="nav">-->
+              <!--<li><%= link_to "Link1", "/path1"  %></li>-->
+              <!--<li><%= link_to "Link2", "/path2"  %></li>-->
+              <!--<li><%= link_to "Link3", "/path3"  %></li>-->
+            <!--</ul>-->
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -44,15 +44,7 @@
              <%= yield %>
           </div>
           <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
+
           </div><!--/span-->
         </div><!--/row-->
 
@@ -66,6 +58,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery-1.8.2.min" %>
 
   </body>
 </html>
