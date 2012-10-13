@@ -17,6 +17,6 @@ class UsersController < ApplicationController
 	end
 	
 	def index
-		@users = User.find_by_index(:email, '_')
+		@users = User.list()
 	end
 end
