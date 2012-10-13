@@ -15,7 +15,7 @@ class ReviewTest < ActiveSupport::TestCase
     @review = Review.new card_key: @card.key, answer: @answer
     assert @review.correct?
 
-    assert_equal @other_card, @review.next
+    assert_equal @other_card.key, @review.next
   end
 
   test 'should be capitalization picky' do

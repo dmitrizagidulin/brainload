@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  helper_method :card, :deck
+  helper_method :review, :card, :deck
 
   def show
     @review = Review.new card_key: params[:id]
@@ -7,17 +7,15 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.new card_key: params[:id], answer: params[:review][:answer]
-    if @review.correct?
-      flash[:success] = 'Great Job!'
-    else
-      flash[:incorrect] = "Let's try again."
-    end
-    redirect_to id: @review.next
   end
 
   private
+  def review
+    @review ||= Review.new({card_key: params[:id]}.merge params[:review])
+  end
+
   def card
-    @card ||= Card.find params[:id]
+    @card ||= review.card
   end
 
   def deck
