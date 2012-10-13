@@ -26,9 +26,12 @@ class CardDeckTest < TestHelper
   test "should create card deck" do
     user = User.new(:email => 'bob@example.com', :password => '32ed3212s')
     user.save!
+
     card_deck = CardDeck.new(:user => user)
     assert_kind_of CardDeck, card_deck
-    assert User.find(card_deck.user_key)
+
+    assert retrieved_user = User.find(card_deck.user_key)
+    assert_equal 'bob@example.com', retrieved_user.email
   end
 end
 

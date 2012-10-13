@@ -5,6 +5,5 @@ class Card
   timestamps!
 
   one :card_deck, using: :stored_key
-
 end
 
