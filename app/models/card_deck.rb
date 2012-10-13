@@ -1,6 +1,8 @@
 class CardDeck
   include Ripple::Document
 
+  property :name, String, presence: true, index: true
+  property :description, String, presence: true, index: true
   property :user_key, String, presence: true, index: true
   timestamps!
 

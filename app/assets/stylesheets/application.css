@@ -1,7 +1,46 @@
-/*
- *= require bootstrap_and_overrides
- */
 
 body {
   padding-top: 40px;
+}
+
+.brand {
+  font-size: 150%;
+}
+.card_face_description {
+    font-style: italic;
+    visibility:hidden;
+}
+.card_face_title {
+    border-bottom: 1px solid #ffffff;
+    width: 150px;
+    height:20px;
+}
+
+.card_face {
+    float: left;
+    font-size: 20pt;
+    font-weight:400;
+    padding:15px;
+    height:50px;
+    width:260px;
+    background-color: #eeeeff;
+    border: 1px solid #2c2c29;
+}
+
+.card_face:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+.card_face_front a:hover {
+    text-decoration: none;
+}
+.card_face_back a:hover {
+    text-decoration: none;
+}
+.card_face_front:hover {
+    background-color: #ffffff;
+    text-decoration: none;
+}
+.card_face_back {
+    display:none;
 }

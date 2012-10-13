@@ -14,6 +14,8 @@ class CardDeckTest < TestHelper
     assert_nil card_deck.user
     assert_not_nil user
     card_deck.user_key = user.key
+    card_deck.name = "Learn German"
+    card_deck.description = "sample set of questions"
     card_deck.save!
     assert_not_nil card_deck.user_key
     assert_equal user.key, card_deck.user_key
@@ -34,7 +36,9 @@ class CardDeckTest < TestHelper
   test "should add cards to deck" do
     user = User.new(:email => 'bob@example.com', :password => '32ed3212s')
     user.save!
-    card_deck = CardDeck.new(:user => user)
+    card_deck = CardDeck.new(:user => user,
+                             :name => "Learn German",
+                             :description => "sample set of questions")
     card_deck.save
     assert_equal 0, card_deck.cards.length
     card = Card.new(:card_deck_key => card_deck.key,
