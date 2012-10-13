@@ -18,4 +18,8 @@ class Login
     return nil unless candidate
     return candidate if candidate.authenticate(password)
 	end
+  
+  def persisted?
+    false
+  end
 end
