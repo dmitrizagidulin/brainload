@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 		respond_to do |format|
 			if @user.save
 				format.html { redirect_to users_url,
-					notice: "User #{@user.name} created." }
+					notice: "User #{@user.email} created." }
 				format.json { render json: @user,
 					status: :created, location: @user }
 			else
