@@ -13,6 +13,22 @@
       :answer: Bitte schon BIT-teh shone
     - :question: What time is it?
       :answer: Wie spat ist es?
+- :name: Learn Dutch
+  :description: Most commonly used Dutch words and phrases
+  :cards:
+    - :question: Good morning
+      :answer: Goede morgen
+    - :question: Hello
+      :answer: Hallo
+    - :question: How are you?
+      :answer: Hoe gaat het met jouw?
+    - :question: What’s that?
+      :answer: Wat is dat?
+    - :question: You’re welcome
+      :answer: Alsjeblieft
+    - :question: What time is it?
+      :answer: Hoe laat is het?
+
 
 
 
