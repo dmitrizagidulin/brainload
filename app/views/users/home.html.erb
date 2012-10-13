@@ -1,4 +1,8 @@
   <h2>Decks:</h2>
+  <div class="btn" style="margin-bottom: 1em; clear: both;">
+    <%= link_to image_tag("add.png") + " New Deck", new_card_deck_path() %>
+  </div>
+
   <ul id="card_deck_list">
     <% @card_decks.each do |card_deck| %>
         <li class="card_deck_face">
@@ -7,6 +11,3 @@
         </li>
     <% end %>
   </ul>
-  <div class="card_deck_face">
-    <%= link_to image_tag("add.png"), new_card_deck_path() %>
-  </div>

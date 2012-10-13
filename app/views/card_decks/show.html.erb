@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 <h2><%= @card_deck.name %></h2>
 <p><%= @card_deck.description %></p>
+
+  <div class="btn" style="margin-bottom: 1em; clear: both;">
+    <%= link_to image_tag("add.png") + " New Card", new_card_path(:card_deck_key => @card_deck.key) %>
+  </div>
+
 <div id="card_box">
   <% @card_deck.cards.each do |card| %>
       <div class="card_face">
@@ -12,7 +17,5 @@
         </div>
       </div>
   <% end %>
-  <div>
-    <%= link_to image_tag("add.png"), new_card_path(:card_deck_key => @card_deck.key) %>
-  </div>
 </div>
+
