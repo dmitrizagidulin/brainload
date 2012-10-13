@@ -1,6 +1,3 @@
-/*
- *= require bootstrap_and_overrides
- */
 
 body {
   padding-top: 40px;
@@ -36,7 +33,7 @@ body {
 }
 
 .card_face_front {
-
+    background-color: #eeeeff;
 }
 .card_face_back {
     display:none;
