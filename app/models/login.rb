@@ -1,3 +1,5 @@
+# Unused; use sessions_controller.rb for the moment. Leaving here for my own ActiveModel reference. --dz
+
 class Login
 	extend ActiveModel::Naming
 	include ActiveModel::Conversion

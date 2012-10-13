@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 			user = matches.first
 		end
 		if user and user.authenticate(params[:password])
-			session[:user_key] = user.key
+			session[:current_user] = user.key
 			redirect_to '/home'
 		else
 			redirect_to login_url, alert: "Invalid user/password combination"
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-		session[:user_key] = nil
-		redirect_to '/', notice: "Logged out."
+		session[:current_user] = nil
+		redirect_to '/', alert: "Logged out."
 	end
 end
