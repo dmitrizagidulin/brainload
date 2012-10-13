@@ -3,8 +3,16 @@ R12Team241::Application.routes.draw do
   resources :cards
   resources :users
 
-  match 'login' => 'login#new', via: :get
-  match 'login' => 'login#create', via: :post
+  match 'home' => 'users#home', via: :get
+  
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    get 'logout' => :destroy
+  end
+  
+#  match 'login' => 'login#new', via: :get
+#  match 'login' => 'login#create', via: :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
