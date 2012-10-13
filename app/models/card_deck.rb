@@ -5,4 +5,8 @@ class CardDeck
   timestamps!
 
   one :user, using: :stored_key
+
+  def cards
+    Card.find_by_index(:card_deck_key, self.key)
+  end
 end
