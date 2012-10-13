@@ -8,4 +8,14 @@ class UserTest < ActiveSupport::TestCase
 
   	assert_equal address, u.email
   end
+
+  test 'secure password' do
+  	address = 'user-email@test.invalid'
+  	password = 'really secure password 12345'
+
+  	u = User.new email: address, password: password
+  	assert u.save
+
+	assert User.find_by(:email, address).authenticate(password)
+  end
 end
