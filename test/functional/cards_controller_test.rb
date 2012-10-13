@@ -18,7 +18,7 @@ class CardsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, :card_deck_key => @card_deck.key
     assert_response :success
   end
 
@@ -29,7 +29,7 @@ class CardsControllerTest < ActionController::TestCase
                             :answer => "this is an answer" }
     assert cards.length > card_count
 
-    assert_redirected_to card_path(assigns(:card))
+    assert_redirected_to card_deck_path(assigns(:card_deck))
   end
 
   test "should show card" do
