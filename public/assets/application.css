@@ -18,11 +18,11 @@ body {
 
 .card_face {
     float: left;
-    font-size: 22pt;
+    font-size: 20pt;
     font-weight:400;
     padding:15px;
     height:50px;
-    width:250px;
+    width:260px;
     background-color: #eeeeff;
     border: 1px solid #2c2c29;
 }
