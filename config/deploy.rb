@@ -19,7 +19,6 @@ set :use_sudo, false
 # SCM Options
 set :scm, :git
 set :repository, "git@github.com:railsrumble/r12-team-241.git"
-set :branch, "master"
 
 # Roles
 role :app, "69.164.207.211"

@@ -30,9 +30,9 @@ body {
     border: 1px solid #2c2c29;
 }
 .card_face:hover {
-    background-color: #E7E9F6;
+    background-color: #eee;
     color: #000;
-    border: 1px solid #2c2c29;
+    border: 15px dashed red;
 }
 
 .card_face_front {

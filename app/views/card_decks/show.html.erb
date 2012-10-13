@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<h2><%= @card_deck.name %></h2>
+<p><%= @card_deck.description %></p>
+<div id="card_box">
+  <% @card_deck.cards.each do |card| %>
+      <div class="card_face">
+        <div id="card_front_key_<%= card.key %>" class="card_face_front">
+          <%= link_to_function card.question, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
+         </div>
+        <div id="card_back_key_<%= card.key %>" class="card_face_back">
+        <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
+        </div>
+      </div>
+  <% end %>
+  <div class="card_face">
+    <%= link_to "Add", new_card_path(:card_deck_key => @card_deck.key) %>
+  </div>
+</div>
