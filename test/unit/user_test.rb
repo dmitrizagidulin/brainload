@@ -16,6 +16,6 @@ class UserTest < ActiveSupport::TestCase
   	u = User.new email: address, password: password
   	assert u.save
 
-	assert User.find_by(:email, address).authenticate(password)
+	assert User.find(address).authenticate(password)
   end
 end
