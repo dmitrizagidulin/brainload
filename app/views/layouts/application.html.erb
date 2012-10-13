@@ -29,8 +29,11 @@
           <a class="brand" href="/">Flasher</a>
           <div class="container nav-collapse">
             <ul class="nav">
+              <% if session[:current_user] %>
+              <li><strong><%= session[:current_user] %></strong><%= link_to "Logout", "/logout"  %></li>
+              <% else %>
               <li><%= link_to "Login", "/login"  %></li>
-              <li><%= link_to "Logout", "/logout"  %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
