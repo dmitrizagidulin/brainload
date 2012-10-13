@@ -18,7 +18,7 @@ body {
 
 .card_face {
     float: left;
-    font-size: 24pt;
+    font-size: 22pt;
     font-weight:400;
     padding:15px;
     height:50px;
@@ -31,11 +31,13 @@ body {
     background-color: #ffffff;
     color: #000;
 }
-
+.card_face_front a:hover {
+    text-decoration: none;
+}
 
 .card_face_front:hover {
     background-color: #ffffff;
-
+    text-decoration: none;
 }
 .card_face_back {
     display:none;
