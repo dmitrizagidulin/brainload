@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
 				session[:current_user] = user.key
 				redirect_to '/'
 			else
-				redirect_to login_url, alert: "Invalid user/password combination"
+				redirect_to '/', alert: "Invalid user/password combination"
 			end
 		end
 	end
