@@ -15,6 +15,10 @@
     <%= f.label :description %>
     <%= f.text_area :description, :rows => 5, :class=> "card_field"%><br />
 
+    <%= f.select :category_key, options_for_select(@categories, @card_deck.category), class: "inline" %>
+    
+    &nbsp;&nbsp;
+
     <label class="radio inline">
     <%= f.radio_button :deck_type, "deck_type", :checked => @card_deck.private? %> Private
     </label>
@@ -30,4 +34,5 @@
       <%= link_to 'Cancel', '/home' %>
      <% end %>
     </div>
+    <div class="clear"><br /></div>
 <% end %>

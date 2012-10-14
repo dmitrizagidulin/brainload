@@ -14,4 +14,16 @@ class Category
   def self.all
     Category.find_by_index('$bucket','_')
   end
+  
+  def self.select_options
+    categories = Category.all
+    categories = categories.reject {|c| c.name == 'Uncategorized'}
+    
+    categories = categories.collect {|c| [c.name, c.key] }
+    categories = [['Uncategorized', 'uncategorized']] + categories.sort!
+  end
+  
+  def self.uncategorized_key
+    'uncategorized'
+  end
 end
