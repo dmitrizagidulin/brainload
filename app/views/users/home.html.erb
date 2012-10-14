@@ -4,7 +4,7 @@
   </div>
 
 <% @user_categories.each do | category | %>
-  <h3><%= category.name %></h3>
+  <h3><%= category.name %> <small><%= link_to 'browse all', category %></small></h3>
   <% category_decks = @user_decks_by_category[category.key].sort_by {|deck| deck.name } %>
   <ul id="card_deck_list">
     <% category_decks.each do |card_deck| %>
