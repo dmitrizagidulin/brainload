@@ -12,14 +12,14 @@ class ReviewTest < ActiveSupport::TestCase
   end
 
   test 'should find a correct answer and have a next card' do
-    @review = Review.new card_key: @card.key, answer: @answer
+    @review = Review.new user: @user, card_key: @card.key, answer: @answer
     assert @review.correct?
 
     assert_equal @other_card.key, @review.next
   end
 
   test 'should be capitalization picky' do
-    @review = Review.new card_key: @card.key, answer: @answer.downcase
+    @review = Review.new user: @user, card_key: @card.key, answer: @answer.downcase
     assert !@review.correct?
   end
 end
