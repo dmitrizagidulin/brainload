@@ -1,18 +1,13 @@
 <h1><%=h deck.name %></h1>
 
-<% unless flash[:success].blank? %>
-  <div class="alert alert-success"><%=h flash[:success] %></div>
-<% end %>
+<div class="row">
+  <div class="span8 offset2 card">
+    <h2 class="question"><%=h card.question %></h2>
 
-<% unless flash[:incorrect].blank? %>
-  <div class="alert"><%=h flash[:incorrect] %></div>
-<% end %>
-
-<h2><%=h card.question %></h2>
-
-<%= form_for @review, url: review_path(@review.id) do |r| %>
-  <%= r.label :answer %>
-  <%= r.text_field :answer %>
-  <br />
-  <%= r.submit 'Check Answer' %>
-<% end %>
+    <%= form_for @review, url: review_path(@review.id) do |r| %>
+      <%= r.text_field :answer, placeholder: 'Enter answer', class: 'span6' %>
+      <br />
+      <%= r.submit 'Check Answer', class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>

@@ -1,29 +1,26 @@
 <h1><%=h deck.name %></h1>
 
-<h2><%=h card.question %></h2>
-
 <div class="row">
-  <div class="span6">
-    <h3>The card says:</h3>
+  <div class="span8 offset2 card">
+    <h2 class="question"><%=h card.question %></h2>
+
+    <p class="muted">You answered:</p>
+    <p class="answer my"><%=h review.answer %></p>
+
+    <p class="muted">The card says:</p>
     <p class="answer"><%=h card.answer %></p>
-  </div>
-  <div class="span6">
-    <h3>You entered:</h3>
-    <p class="answer"><%=h review.answer %></p>
-  </div>
-</div>
 
-<div class="row">
-  <div class="span8 offset2">
     <% if review.correct? %>
       <div class="alert alert-success">
         Great Job!
-        <%= link_to 'Onward!', review_path(review.next), class: 'btn btn-small' %>
+        <br />
+        <%= link_to 'Onward!', review_path(review.next), class: 'btn btn-large' %>
       </div>
     <% else %>
       <div class="alert">
         You'll get it next time!
-        <%= link_to 'Onward!', review_path(review.next), class: 'btn btn-small' %>
+        <br />
+        <%= link_to 'Onward!', review_path(review.next), class: 'btn btn-large' %>
       </div>
     <% end %>
   </div>
