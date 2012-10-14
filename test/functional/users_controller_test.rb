@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-
+    @existing_user = User.create email: 'test@example.invalid', password: '12345'
   end
 
   def users
@@ -16,11 +16,13 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "should get new" do
+    session[:current_user] = nil
     get :new
     assert_response :success
   end
   
   test "should create user" do
+    session[:current_user] = nil
     user_count = users.length
     post :create, :user => { :email => "test_unit@unittest.com",
       :password => "test123",

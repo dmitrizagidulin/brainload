@@ -12,6 +12,8 @@ class CardDecksControllerTest < ActionController::TestCase
                      :question => "this is a question",
                      :answer => "this is an answer")
     @card.save!
+
+    session[:current_user] = @user
   end
 
   def decks
