@@ -23,6 +23,7 @@ class Review
   end
 
   def card
+    return nil if self.card_key.nil?
     @card ||= user.allowed_card card_key
   end
 
