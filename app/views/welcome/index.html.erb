@@ -30,7 +30,7 @@
   
 <% @public_categories.each do | category | %>
   <div class="span6">
-    <h4><%= category.name %></h4>
+    <h4><%= link_to category.name, category %></h4>
     <% category_decks = @public_decks_by_category[category.key].sort_by {|deck| deck.name} %>
     <% last_deck = category_decks.last %>
     <% category_decks.each do | card_deck | %>
