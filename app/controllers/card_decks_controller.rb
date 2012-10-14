@@ -30,14 +30,14 @@ class CardDecksController < ApplicationController
   # GET /card_decks/1/edit
   def edit
     @categories = Category.select_options 
-    @card_deck = CardDeck.find(params[:id])
+    @card_deck = CardDeck.find_for_user_and_key(current_user, params[:id])
   end
 
   # POST /card_decks
   # POST /card_decks.json
   def create
     logger.info params[:card_deck]
-    @card_deck = CardDeck.new(params[:card_deck].merge({:user_key => session[:current_user]}))
+    @card_deck = CardDeck.new(params[:card_deck].merge({:user_key => current_user.key}))
 
     respond_to do |format|
       if @card_deck.save!
@@ -53,7 +53,7 @@ class CardDecksController < ApplicationController
   # PUT /card_decks/1
   # PUT /card_decks/1.json
   def update
-    @card_deck = CardDeck.find(params[:id])
+    @card_deck = CardDeck.find_for_user_and_key(current_user, params[:id])
 
     respond_to do |format|
       if @card_deck.update_attributes(params[:card_deck])
@@ -69,7 +69,7 @@ class CardDecksController < ApplicationController
   # DELETE /card_decks/1
   # DELETE /card_decks/1.json
   def destroy
-    @card_deck = CardDeck.find(params[:id])
+    @card_deck = CardDeck.find_for_user_and_key(current_user, params[:id])
     @card_deck.destroy
 
     respond_to do |format|
