@@ -3,30 +3,47 @@
       <div class="btn">
         <h3> <%= link_to 'Your Decks', '/home' %></h3>
       </div>
+    </div>
 <% else %>
-    <p style="margin-top: 2em;">Please login with your account
-      or use one of the providers below.</p>
-    <div class="btn-toolbar">
+    <div class="row">
+      <div class="span6">
+        <h1>Welcome Rails Rumble judges!</h1>
+        <p>
+          Brainload is a flash card application. 
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+      </div>
+      <div class="span6">
+        <div class="provider_box">
+          <h1>New to Brainload?</h1>
+          <p>Sign in with one of these services.</p>
+          <div class="provider_box btn">
+            <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+          </div>
+          <div class="provider_box btn">
+            <%= link_to "Sign in with Github", "/auth/github" %>
+          </div>
+          <div class="provider_box btn">
+            <%= link_to "Sign in with Google", "/auth/google" %>
+          </div>
+        </div>
 
-      <div class="direct_login_box btn">
-        <%= render :partial => "/sessions/new" %>
-      </div>
-      <div class="provider_box btn">
-        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-      </div>
-      <div class="provider_box btn">
-        <%= link_to "Sign in with Github", "/auth/github" %>
-      </div>
-      <div class="provider_box btn">
-        <%= link_to "Sign in with Google", "/auth/google" %>
+        <div class="direct_login_box">
+          <h1>Returning to Brainload?</h1>
+          <p>It's nice to see you again!</p>
+          <%= render :partial => "/sessions/new" %>
+        </div>
       </div>
     </div>
 <% end %>
 
-<div class="clear"><br/></div>
+<div class="row">
+  <div class="span12">
+  </div>
+</div>
 
 <div class="row">
-  <div class="span12"><h3>Public Decks</h3></div>
+  <div class="span12"><h1>Public Decks</h1></div>
   
 <% @public_categories.each do | category | %>
   <div class="span6">

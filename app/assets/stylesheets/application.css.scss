@@ -5,6 +5,7 @@
 @import "reviews";
 @import "card_decks";
 @import "cards";
+@import "homepage";
 
 body {
   background: white image-url('color-splat.jpg') no-repeat top center;
@@ -29,21 +30,6 @@ h1 {
 }
 
 
-.provider_box {
-    float:left;
-    height:100px;
-    width:100px;
-    border: 1px solid #2c2c29;
-    padding: 15px;
-    font-weight:800;
-}
-.direct_login_box {
-  float:left;
-  height:100px;
-  width:250px;
-  border: 1px solid #2c2c29;
-  padding: 15px;
-}
 .clear {
     clear: both;
 }
