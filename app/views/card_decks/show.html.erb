@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
-<h2><%= @card_deck.name %></h2>
-
+<h1><%= @card_deck.name %></h1>
 <p><small>Category: <%= @card_deck.category_name %></small></p>
+
+<p id="notice"><%= notice %></p>
 
 <p><%= @card_deck.description %></p>
 
 <div class="btn-group">
   <% unless @card_deck.empty? %>
     <% first_card = @card_deck.cards.first %>
-    <%= link_to image_tag('play.png') + ' Review', review_path(first_card), class: 'btn btn-success' %>
+    <%= link_to image_tag('play.png') + ' Study', review_path(first_card), class: 'btn btn-primary' %>
   <% end %>
+
+  <%= link_to image_tag('add.png') + ' Add Cards', new_card_path(:card_deck_key => @card_deck.key), class: 'btn btn-success' %>
 
   <%= link_to image_tag('edit.png') + ' Edit Deck Info', edit_card_deck_path(@card_deck), class: 'btn' %>
 
-  <%= link_to image_tag('add.png') + ' Add Cards', new_card_path(:card_deck_key => @card_deck.key), class: 'btn' %>
+  <%= link_to 'Back to Your Decks', home_path, class: 'btn' %>
 </div>
 <div class="deck row" data-masonic="true">
   <% @card_deck.cards.each do |card| %>
