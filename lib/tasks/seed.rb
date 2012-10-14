@@ -8,7 +8,8 @@ task :seed do
 
     @card_deck = CardDeck.new(:user_key => @user.key,
                               :name => card_deck[:name],
-                              :description => card_deck[:description])
+                              :description => card_deck[:description],
+                              :deck_type => 'private')  # private decks
     @card_deck.save!
     card_deck[:cards].each do |card|
       Card.new(:card_deck_key => @card_deck.key,
@@ -16,4 +17,22 @@ task :seed do
                :answer => card[:answer]).save!
     end
   end
+end
+
+task :clear_decks do
+  CardDeck.all.each(&:destroy)
+end
+
+task :clear_users do
+  User.all.each(&:destroy)
+end
+
+task :clear_cards do
+  Card.all.each(&:destroy)
+end
+
+task :clear_all do
+  User.all.each(&:destroy)
+  Card.all.each(&:destroy)
+  CardDeck.all.each(&:destroy)
 end
