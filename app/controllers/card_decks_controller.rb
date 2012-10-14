@@ -29,8 +29,7 @@ class CardDecksController < ApplicationController
   # POST /card_decks.json
   def create
     logger.info params[:card_deck]
-    @card_deck = CardDeck.new(params[:card_deck])
-    @card_deck.user_key = current_user.key
+    @card_deck = CardDeck.new(params[:card_deck].merge({:user_key => current_user}))
 
     respond_to do |format|
       if @card_deck.save!
