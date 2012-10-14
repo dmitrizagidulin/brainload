@@ -1,11 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper_method :current_user
+
   def current_user
-    if session and session[:current_user]
-      user = User.find_by_index(:email, session[:current_user]).first
-    else
-      user = nil
-    end
-    return user
+    return @current_user if defined? @current_user
+    return nil unless session[:current_user]
+    @current_user = User.find(session[:current_user])
+    return @current_user unless @current_user.nil?
+
+    return session[:current_user] = nil
+  end
+
+  def require_user
+    return true unless current_user.nil?
+
+    redirect_to login_url
   end
 end
