@@ -2,36 +2,45 @@
 <h2><%= @card_deck.name %></h2>
 <p><%= @card_deck.description %></p>
 
-  <div class="btn-toolbar">
-    <div class="btn">
-      <%= link_to "New Card", new_card_path(:card_deck_key => @card_deck.key) %>
-    </div>
-    <div class="btn">
-      <%= link_to "Edit Deck", edit_card_deck_path(@card_deck) %>
-    </div>
-
-      <% card = @card_deck.cards.first %>
-      <% if card %>
-        <div class="btn">
-            <%= link_to 'Study |>', review_path(card) %>
-        </div>
-          <% end %>
-
-
+<div class="btn-toolbar">
+  <div class="btn">
+    <%= link_to image_tag('add.png', :alt => "Add Deck"), new_card_path(:card_deck_key => @card_deck.key) %>
   </div>
+  <div class="btn">
+    <%= link_to image_tag('edit.png'), edit_card_deck_path(@card_deck) %>
+  </div>
+
+  <% card = @card_deck.cards.first %>
+  <% if card %>
+      <div class="btn">
+        <%= link_to image_tag('play.png'), review_path(card) %>
+      </div>
+  <% end %>
+
+
+</div>
 
 <div id="card_box">
   <% @card_deck.cards.each do |card| %>
       <div class="card card_in_list">
         <div class="card_options">
-          <%= link_to '|>', review_path(card) %>
+          <div class="card_option">
+            <%= link_to image_tag('play.png'), review_path(card) %>
+          </div>
+          <div class="card_option">
+            <%= link_to image_tag('edit.png'), edit_card_path(card) %>
+          </div>
         </div>
 
         <div id="card_front_key_<%= card.key %>" class="card_face_front">
+          <p class="q_a">
           <%= link_to_function card.question, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
-         </div>
+          </p>
+        </div>
         <div id="card_back_key_<%= card.key %>" class="card_face_back">
-        <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
+          <p class="q_a">
+            <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
+          </p>
         </div>
 
       </div>

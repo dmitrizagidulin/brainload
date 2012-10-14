@@ -1,4 +1,4 @@
-<%= form_for(@card) do |f| %>
+  <%= form_for(@card) do |f| %>
   <% if @card.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
@@ -11,12 +11,19 @@
     </div>
   <% end %>
     <%= f.label :question %>
-    <%= f.text_field :question %><br />
+    <%= f.text_field :question, :class=> "card_field" %><br />
     <%= f.label :answer %>
-    <%= f.text_field :answer %><br />
+    <%= f.text_field :answer, :class=> "card_field" %><br />
     <%= f.hidden_field :card_deck_key, :value => params[:card_deck_key] %><br />
 
     <div class="actions">
     <%= f.submit %>
-  </div>
+    |<% if @card.key %>
+          <%= link_to 'Cancel', @card %>
+      <% else %>
+          <%= link_to 'Cancel', card_deck_path(params[:card_deck_key]) %>
+      <% end %>
+
+    </div>
 <% end %>
+

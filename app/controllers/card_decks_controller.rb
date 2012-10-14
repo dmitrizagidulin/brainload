@@ -1,4 +1,9 @@
 class CardDecksController < ApplicationController
+
+  def index
+    @card_decks = current_user.card_decks
+  end
+
   # GET /card_decks/1
   # GET /card_decks/1.json
   def show
