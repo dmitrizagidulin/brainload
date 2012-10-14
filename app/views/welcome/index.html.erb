@@ -25,13 +25,17 @@
 
 <div class="clear"><br/></div>
 
-<div class="btn">
-  <h3>Public Decks</h3>
-  <ul>
-    <% @public_decks.each do |card_deck| %>
-        <li><%= link_to card_deck.name, card_deck %>
-          <%= card_deck.description %>
-        </li>
+<div class="row">
+  <div class="span12"><h3>Public Decks</h3></div>
+  
+<% @public_categories.each do | category | %>
+  <div class="span6">
+    <h4><%= category.name %></h4>
+    <% last_deck = @public_decks_by_category[category.key].last %>
+    <% @public_decks_by_category[category.key].each do | card_deck | %>
+      <span><%= link_to card_deck.name, card_deck %><%= ',' unless card_deck.key == last_deck.key %></span>
     <% end %>
-  </ul>
+  </div>
+<% end %>
 </div>
+
