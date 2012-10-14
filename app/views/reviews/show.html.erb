@@ -1,11 +1,21 @@
-<h1><%=h deck.name %></h1>
+<div class="row cardinfo">
+  <div class="span6 offset2">
+    <h1><%=h deck.name %></h1>
+  </div>
+  <div class="span2">
+    <div class="navinfo muted">
+      &#9166; Check answer
+    </div>
+  </div>
+</div>
+
 
 <div class="row">
   <div class="span8 offset2 card">
     <h2 class="question"><%=h card.question %></h2>
 
     <%= form_for @review, url: review_path(@review.id) do |r| %>
-      <%= r.text_field :answer, placeholder: 'Enter answer', class: 'span6' %>
+      <%= r.text_field :answer, placeholder: 'Enter answer', class: 'span6', autofocus: 'autofocus' %>
       <br />
       <%= r.submit 'Check Answer', class: 'btn btn-default' %>
     <% end %>
