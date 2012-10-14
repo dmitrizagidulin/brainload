@@ -7,8 +7,6 @@ class Category
 
   key_on :url_slug
 
-  many :card_decks, :class_name => "CardDeck"
-  
   def card_decks
     CardDeck.find_by_index(:category_key, self.key)
   end
