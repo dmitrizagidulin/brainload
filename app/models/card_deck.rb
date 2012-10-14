@@ -26,7 +26,11 @@ class CardDeck
     self.deck_type == 'private' or self.deck_type.nil?
   end
 
-    
+  def self.public_decks
+		CardDeck.find_by_index('deck_type','public')
+  end
+  
+  
   def self.all
     CardDeck.find_by_index('$bucket','_')
   end
