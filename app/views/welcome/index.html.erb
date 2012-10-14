@@ -1,37 +1,37 @@
 <% if session[:current_user] %>
-<div id="content_box">
-  <div class="btn">
-    <h3> <%= link_to 'Your Decks', '/home' %></h3>
-</div>
+    <div id="content_box">
+      <div class="btn">
+        <h3> <%= link_to 'Your Decks', '/home' %></h3>
+      </div>
 <% else %>
-  <p style="margin-top: 2em;">Please login with your account
-  or use one of the providers below.</p>
-  <div class="btn-toolbar">
+    <p style="margin-top: 2em;">Please login with your account
+      or use one of the providers below.</p>
+    <div class="btn-toolbar">
 
-    <div class="direct_login_box btn">
-       <%= render :partial => "/sessions/new" %>
-    </div>
+      <div class="direct_login_box btn">
+        <%= render :partial => "/sessions/new" %>
+      </div>
       <div class="provider_box btn">
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
       </div>
       <div class="provider_box btn">
         <%= link_to "Sign in with Github", "/auth/github" %>
       </div>
-    <div class="provider_box btn">
-      <%= link_to "Sign in with Google", "/auth/google" %>
+      <div class="provider_box btn">
+        <%= link_to "Sign in with Google", "/auth/google" %>
+      </div>
     </div>
-  </div>
 <% end %>
 
-<div class="clear"><br /></div>
+<div class="clear"><br/></div>
 
 <div class="btn">
   <h3>Public Decks</h3>
   <ul>
-  <% @public_decks.each do | card_deck | %>
-     <li><%= link_to card_deck.name, card_deck %>
-     <%= card_deck.description %>
-     </li>
-  <% end %>
+    <% @public_decks.each do |card_deck| %>
+        <li><%= link_to card_deck.name, card_deck %>
+          <%= card_deck.description %>
+        </li>
+    <% end %>
   </ul>
 </div>
