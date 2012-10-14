@@ -1,4 +1,13 @@
-<h1><%=h deck.name %></h1>
+<div class="row cardinfo">
+  <div class="span6 offset2">
+    <h1><%=h deck.name %></h1>
+  </div>
+  <div class="span2">
+    <div class="navinfo muted">
+      &#9166; Next flashcard
+    </div>
+  </div>
+</div>
 
 <div class="row">
   <div class="span8 offset2 card">
@@ -14,13 +23,13 @@
       <div class="alert alert-success">
         Great Job!
         <br />
-        <%= link_to 'Onward!', review_path(review.next), class: 'btn btn-large' %>
+        <%= onward_button %>
       </div>
     <% else %>
       <div class="alert">
         You'll get it next time!
         <br />
-        <%= link_to 'Onward!', review_path(review.next), class: 'btn btn-large' %>
+        <%= onward_button %>
       </div>
     <% end %>
   </div>
