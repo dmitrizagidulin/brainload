@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
   def require_user
     return true unless current_user.nil?
 
-    redirect_to login_url
+    redirect_to login_path
+  end
+
+  def require_no_user
+    return true if current_user.nil?
+
+    redirect_to home_path
   end
 end

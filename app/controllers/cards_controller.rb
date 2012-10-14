@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_filter :require_user, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /cards/1
   # GET /cards/1.json

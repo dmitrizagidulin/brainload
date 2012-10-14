@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	before_filter :require_no_user, only: [:new, :create]
+	before_filter :require_user, only: [:home]
+	
 	def create
 		unless params
 			redirect_to login_url
@@ -20,11 +23,7 @@ class UsersController < ApplicationController
 	end
 	
 	def home
-		user = current_user
-		if user.nil?
-			redirect_to login_url
-		end
-		@card_decks = CardDeck.find_by_index(:user_key, user.key)
+		@card_decks = CardDeck.find_by_index(:user_key, current_user.key)
 	end
 	
 	def index

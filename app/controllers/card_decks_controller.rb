@@ -1,5 +1,5 @@
 class CardDecksController < ApplicationController
-
+  before_filter :require_user, only: [:new, :create, :edit, :update, :destroy]
   def index
     @card_decks = current_user.card_decks
   end
