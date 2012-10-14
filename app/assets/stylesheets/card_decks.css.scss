@@ -1,3 +1,27 @@
-// Place all the styles related to the card_decks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.deck {
+  margin-top: 42px;
+
+  .card {
+    .card_options {
+      a:link {
+        float: right;
+      }
+    }    
+    .card_face {
+      clear: both;
+
+      &.front {
+        &:before {
+          content: 'Q:';
+        }
+      }
+      &.back {
+        color: #004;
+        display: none;
+        &:before {
+          content: 'A:';
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,12 @@
     padding-right: 4px;
     margin-bottom: -10px;
     display: inline-block;
+    a {
+      color: black;
+      .icon-info-sign {
+
+      }
+    }
   }
   .navinfo {
     padding-top: 20px;
@@ -21,6 +27,7 @@
   background: rgb(253, 253, 243) image-url('card-background.png');
   text-align: center;
   box-shadow: 0px 4px 10px 5px #ccc;
+  margin-bottom: 20px;
 
   input[type='text'] {
     font-size: 2em;
