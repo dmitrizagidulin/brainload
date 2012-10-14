@@ -1,6 +1,5 @@
 R12Team241::Application.routes.draw do
   resources :reviews
-
   resources :card_decks
   resources :cards
   resources :users

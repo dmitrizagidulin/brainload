@@ -11,6 +11,6 @@ require './lib/tasks/seed'
 
 
 task :drop do
-  user = User.find_by_index(:email, "bob@example.com").first
-  CardDeck.find_by_index(:user_key, user.key).each { |cd| cd.destroy! }
+  CardDeck.find_by_index('$bucket','_').each { |cd| cd.destroy! }
+  User.find_by_index('$bucket','_').each {|u| u.destroy! }
 end

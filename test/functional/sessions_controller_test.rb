@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should redirect to login page on a get session/create" do
     get :create
