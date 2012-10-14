@@ -1,4 +1,16 @@
 .cardinfo {
+  margin-top: 20px;
+  .folder h1 {
+    border-radius: 8px;
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    color: black;
+    padding-bottom: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-bottom: -10px;
+    display: inline-block;
+  }
   .navinfo {
     padding-top: 20px;
     vertical-align: bottom;
@@ -6,7 +18,7 @@
   }
 }
 .card {
-  background-image: image-url('card-background.png');
+  background: rgb(253, 253, 243) image-url('card-background.png');
   text-align: center;
   box-shadow: 0px 4px 10px 5px #ccc;
 
