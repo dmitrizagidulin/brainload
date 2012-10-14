@@ -1,21 +1,21 @@
-<%= form_tag "/login" do %>
-   <div>
-     <table class="login_form">
-       <tr>
-         <td class="login_form_field_name">Name:</td>
-         <td></td>
-         <td> <%= text_field_tag :email, params[:email], :class => "login_field" %> </td>
-       </tr>
+<%= form_tag "/login", class: 'form-horizontal' do %>
 
-     <tr>
-       <td class="login_form_field_name">Password:</td>
-       <td></td>
-       <td>
+  <div class="control-group">
+    <label class="control-label" for="email">Email:</label>
+    <div class="controls">
+      <%= text_field_tag :email, params[:email], :class => "login_field" %>
+    </div>
+  </div>
 
-            <%= password_field_tag :password, params[:password], :class => "login_field" %>
-      </td>
-       </tr>
-       <tr><td></td><td></td><td> <%= submit_tag "Log In", class: 'btn btn-primary' %> </td></tr>
-     </table>
+  <div class="control-group">
+    <label class="control-label" for="password">Password:</label>
+    <div class="controls">
+      <%= password_field_tag :password, params[:password], :class => "login_field" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= submit_tag "Log In", class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
