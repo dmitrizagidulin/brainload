@@ -18,13 +18,22 @@
           <h1>New to Brainload?</h1>
           <p>Sign in with one of these services.</p>
           <div class="provider_box btn">
-            <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+            <%= link_to "/auth/twitter" do %>
+              <span class="icon-twitter"></span>
+              Sign in with Twitter
+            <% end %>
           </div>
           <div class="provider_box btn">
-            <%= link_to "Sign in with Github", "/auth/github" %>
+            <%= link_to "/auth/github" do %>
+              <span class="icon-github"></span>
+              Sign in with GitHub
+            <% end %>
           </div>
           <div class="provider_box btn">
-            <%= link_to "Sign in with Google", "/auth/google" %>
+            <%= link_to "/auth/google" do %>
+              <span class="icon-google-plus"></span>
+              Sign in with Google
+            <% end %>
           </div>
         </div>
 
