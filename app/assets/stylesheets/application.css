@@ -3,6 +3,9 @@ body {
   padding-top: 40px;
 }
 
+#content_box {
+    padding-top:50px;
+}
 .brand {
   font-size: 150%;
 }
@@ -43,4 +46,12 @@ body {
 }
 .card_face_back {
     display:none;
+}
+
+.provider_box {
+    float:left;
+    height:100px;
+    width:150px;
+    border: 1px solid #2c2c29;
+    padding: 15px;
 }

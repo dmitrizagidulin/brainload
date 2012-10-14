@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 gem 'ripple', '1.0.0.beta2'
-
+gem 'omniauth-twitter'
+gem 'omniauth-github'
 gem 'sass'
 gem 'haml'
 

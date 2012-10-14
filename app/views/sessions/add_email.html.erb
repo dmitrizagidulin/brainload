@@ -1,0 +1,15 @@
+<%= form_tag do %>
+    <fieldset>
+      <legend>Authentication successful! </legend>
+
+      <p>Now, please add your email address so we can stay in touch. (no spam, we promise)</p>
+
+      <div>
+        <%= label_tag :email, 'Email:' %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div>
+        <%= submit_tag "Save", class: 'btn btn-primary' %>
+      </div>
+    </fieldset>
+<% end %>
