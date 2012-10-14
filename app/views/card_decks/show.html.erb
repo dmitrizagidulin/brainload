@@ -4,11 +4,16 @@
 
   <div class="btn-toolbar">
     <div class="btn">
-      <%= link_to image_tag("add.png") + " New Card", new_card_path(:card_deck_key => @card_deck.key) %>
+      <%= link_to "New Card", new_card_path(:card_deck_key => @card_deck.key) %>
     </div>
     <div class="btn">
       <%= link_to "Edit Deck", edit_card_deck_path(@card_deck) %>
     </div>
+    <div class="btn">
+      <% card = @card_deck.cards.first %>
+      <%= link_to 'Study |>', review_path(card) %>
+    </div>
+
   </div>
 
 <div id="card_box">
@@ -20,7 +25,6 @@
         <div id="card_back_key_<%= card.key %>" class="card_face_back">
         <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
         </div>
-          <div class="study_btn"><%= link_to 'study', review_path(card) %></div>
       </div>
   <% end %>
 </div>
