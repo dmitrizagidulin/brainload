@@ -13,6 +13,8 @@ R12Team241::Application.routes.draw do
     get 'logout' => :destroy
   end
 
+	match '/save_deck/:id' => 'save_deck_events#create', :as => :card_deck_key
+
   match "/auth/:provider/callback" => "sessions#create_from_callback"
   match "/signout" => "sessions#destroy", :as => :signout
   match "/add_email/:uid" => "sessions#add_email", :as => :add_email

@@ -8,6 +8,9 @@
   <% first_card = card_deck.cards.first %>
   <li><%= link_to card_deck.name, card_deck %>
     <%= link_to 'study', review_path(first_card), class: 'btn small' %>
+    <% if current_user %>
+    <%= link_to 'save', '/save_deck/'+card_deck.key.to_s, method: :post, class: 'btn small' %>
+    <% end %>
   </li>
 <% end %>
 </ul>
