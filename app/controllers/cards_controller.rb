@@ -40,7 +40,8 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.update_attributes(params[:card])
-        format.html { redirect_to @card, notice: 'Card was successfully updated.' }
+        @card_deck = CardDeck.find(@card.card_deck_key)
+        format.html { redirect_to @card_deck, notice: 'Card was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

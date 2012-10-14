@@ -14,7 +14,7 @@
     <%= f.text_area :question, :class => "card_field", rows: 4 %><br />
     <%= f.label :answer %>
     <%= f.text_area :answer, :class => "card_field", rows: 4 %><br />
-    <%= f.hidden_field :card_deck_key, :value => params[:card_deck_key] %><br />
+    <%= f.hidden_field :card_deck_key, :value => @card.card_deck_key %><br />
 
     <div class="actions btn-group">
       <%= f.submit class: 'btn btn-primary' %>
