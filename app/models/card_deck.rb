@@ -14,6 +14,10 @@ class CardDeck
   one :user, using: :stored_key
   one :category, using: :stored_key
   
+  def empty?
+    cards.empty?
+  end
+
   def cards
     Card.find_by_index(:card_deck_key, self.key)
   end
