@@ -5,7 +5,7 @@ R12Team241::Application.routes.draw do
   resources :cards
   resources :users
 
-  match 'home' => 'users#home', via: :get
+  match 'home' => 'welcome#home', via: :get
   
   controller :sessions do
     get 'login' => :new
