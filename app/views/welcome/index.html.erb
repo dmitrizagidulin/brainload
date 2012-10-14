@@ -3,15 +3,22 @@
   <p style="margin-top: 2em;"><%= link_to 'View Your Card Decks', '/home' %>.</p> 
 </div>
 <% else %>
-  <p style="margin-top: 2em;">Please <%= link_to 'Log In', '/login' %> with existing account. 
+  <p style="margin-top: 2em;">Please with existing account.
   Or use one of the providers below.</p>
   <div class="btn-toolbar">
+
+    <div class="direct_login_box btn">
+       <%= render :partial => "/sessions/new" %>
+    </div>
       <div class="provider_box btn">
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
       </div>
       <div class="provider_box btn">
         <%= link_to "Sign in with Github", "/auth/github" %>
       </div>
+    <div class="provider_box btn">
+      <%= link_to "Sign in with Google", "/auth/google" %>
+    </div>
   </div>
 <% end %>
 
