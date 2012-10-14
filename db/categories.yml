@@ -6,4 +6,9 @@
   :url_slug: computer-science
 - :name: Exam Prep
   :url_slug: exam-prep
-  
+- :name: US Education (K-12)
+  :url_slug: education-us-k12
+- :name: US Education (College)
+  :url_slug: education-us-college
+- :name: Medicine and Health
+  :url_slug: medicine
