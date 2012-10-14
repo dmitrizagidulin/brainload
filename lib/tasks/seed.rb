@@ -2,8 +2,8 @@ def seed_categories
   seed_data = YAML.load(IO.read(File.dirname(__FILE__) + '/../../db/categories.yml'))
   seed_data.each do |category|
 
-    @category = Category.new( :name => card_deck[:name],
-                              :url_slug => card_deck[:url_slug])
+    @category = Category.new( :name => category[:name],
+                              :url_slug => category[:url_slug])
     @category.save!
   end
 end
