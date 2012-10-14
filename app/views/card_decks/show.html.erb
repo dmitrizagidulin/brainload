@@ -24,12 +24,8 @@
   <% @card_deck.cards.each do |card| %>
       <div class="card card_in_list">
         <div class="card_options">
-          <div class="card_option">
             <%= link_to image_tag('play.png'), review_path(card) %>
-          </div>
-          <div class="card_option">
             <%= link_to image_tag('edit.png'), edit_card_path(card) %>
-          </div>
         </div>
 
         <div id="card_front_key_<%= card.key %>" class="card_face_front">

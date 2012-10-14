@@ -101,7 +101,6 @@ h1 {
   float:left;
   padding-top:20px;
   width:250px;
-  height:50px;
   margin:15px;
 }
 .card_in_view {
@@ -118,10 +117,12 @@ h1 {
   height: 13px;
   border: 0px solid #323e41;
 }
-.card_option {
+.card_options a:link {
+  display: block;
   float:left;
   width:13px;
   margin-top:-5px;
+  margin-right: 2px;
 }
 
 .card_field {
