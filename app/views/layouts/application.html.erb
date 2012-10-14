@@ -16,29 +16,29 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
   <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">Flasher</a>
-          <div class="container nav-collapse">
-            <ul class="nav pull-right">
-              <% if session[:current_user] %>
-              <li><%= link_to "Home ("+session[:current_user]+")", "/home"  %></li>
-              <li><%= link_to "Logout", "/logout"  %></li>
-              <% else %>
-              <li><%= link_to "Login", "/login"  %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
+    <div id="wrap">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Flasher</a>
+            <div class="container nav-collapse">
+              <ul class="nav pull-right">
+                <% if session[:current_user] %>
+                <li><%= link_to "Home ("+session[:current_user]+")", "/home"  %></li>
+                <li><%= link_to "Logout", "/logout"  %></li>
+                <% else %>
+                <li><%= link_to "Login", "/login"  %></li>
+                <% end %>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div>
 
       <div class="container">
           <div class="row" id="main">
