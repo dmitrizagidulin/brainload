@@ -24,6 +24,18 @@ class User
     return nil
   end
 
+  def saved_deck_events
+    saved_deck_events = SaveDeckEvent.find_by_index(:user_key, self.key)
+  end
+  
+  def saved_deck_keys
+    user_saved_decks = self.saved_deck_events.collect {|event| event.card_deck_key}
+  end
+  
+  def has_saved_deck(card_deck_key)
+    self.saved_deck_keys.include? card_deck_key
+  end
+  
   def allowed_card(key)
     candidate = Card.find key
     deck = candidate.card_deck
