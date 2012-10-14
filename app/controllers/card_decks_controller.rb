@@ -67,7 +67,7 @@ class CardDecksController < ApplicationController
   # DELETE /card_decks/1
   # DELETE /card_decks/1.json
   def destroy
-    @card_deck = CardDeck.find_for_user_and_key(current_user, params[:id])
+    @card_deck = CardDeck.find(params[:id])
     @card_deck.destroy
 
     respond_to do |format|
