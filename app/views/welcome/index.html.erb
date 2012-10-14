@@ -1,16 +1,21 @@
 <% if current_user %>
 <div id="content_box">
+<<<<<<< HEAD
   <p style="margin-top: 2em;">Logged in. <%= link_to 'View Your Card Decks', '/home' %>.</p> 
 </div>
 <% else %>
   <p style="margin-top: 2em;">Please <%= link_to 'Log In', '/login' %> with existing account. 
   Or use one of the providers below.</p>
+=======
+  <% unless session[:current_user] %>
+>>>>>>> d9c83734fa09b071a6b885906492094e0ecf3afc
       <div class="provider_box btn">
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
       </div>
       <div class="provider_box btn">
         <%= link_to "Sign in with Github", "/auth/github" %>
       </div>
+<<<<<<< HEAD
 <% end %>
 
 <h3>Public Decks</h3>
@@ -21,3 +26,27 @@
   </li>
 <% end %>
 </ul>
+=======
+  <% else %>
+      <p> Welcome back <%= session[:current_user] %></p>
+      <h2>Decks:</h2>
+      <ul id="card_deck_list">
+        <% card_decks = User.find_by_index(:email, session[:current_user]).first.card_decks %>
+        <% if (card_decks.length > 0) %>
+           <% card_decks.each do |card_deck| %>
+            <li class="card_deck_face">
+              <span class="card_deck_face_title"><%=  link_to card_deck.name, card_deck %></span>
+              <span class="card_deck_face_description"><%=  card_deck.description %></span>
+            </li>
+           <% end %>
+        <% else %>
+            <p> No decks yet!</p>
+      <% end %>
+      </ul>
+      <div class="card_deck_face">
+        <%= link_to image_tag("add.png"), new_card_deck_path() %>
+      </div>
+      </ul>
+<% end %>
+</div>
+>>>>>>> d9c83734fa09b071a6b885906492094e0ecf3afc

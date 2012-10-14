@@ -13,11 +13,15 @@ class User
 
   has_secure_password
   many :card_decks, :class_name => "CardDeck"
+<<<<<<< HEAD
   
   def self.all
     User.find_by_index('$bucket','_')
   end
   
+=======
+
+>>>>>>> d9c83734fa09b071a6b885906492094e0ecf3afc
   def self.create_with_omniauth(auth)
     user = User.create(:provider => auth["provider"],
            :uid => auth["uid"],
@@ -33,5 +37,11 @@ class User
     user = User.find_by_index(:uid, uid).collect{|u| u if u.provider == provider}.compact.first
     p "user found:" + user.inspect
     user
+<<<<<<< HEAD
+=======
+  end
+  def self.all
+    User.find_by_index('$bucket','_')
+>>>>>>> d9c83734fa09b071a6b885906492094e0ecf3afc
   end
 end
