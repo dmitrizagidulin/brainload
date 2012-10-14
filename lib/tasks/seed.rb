@@ -46,6 +46,7 @@ task :clear_cards do
 end
 
 task :clear_all do
+  Category.all.each(&:destroy)
   User.all.each(&:destroy)
   Card.all.each(&:destroy)
   CardDeck.all.each(&:destroy)
