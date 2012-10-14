@@ -15,7 +15,14 @@
     <%= f.label :description %>
     <%= f.text_area :description, :rows => 5 %><br />
 
+    <label class="radio inline">
+    <%= f.radio_button :deck_type, "deck_type", :checked => @card_deck.private? %> Private
+    </label>
+    <label class="radio inline">
+    <%= f.radio_button :deck_type, "deck_type", :checked => @card_deck.public? %> Public
+    </label>
+    
     <div class="actions">
-    <%= f.submit :value => "save" %>
-  </div>
+      <%= f.submit :value => "save", :class=> "btn" %>
+    </div>
 <% end %>

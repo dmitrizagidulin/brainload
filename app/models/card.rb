@@ -8,5 +8,9 @@ class Card
   timestamps!
 
   one :card_deck, using: :stored_key
+  
+  def self.all
+    Card.find_by_index('$bucket','_')
+  end
 end
 

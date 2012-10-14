@@ -12,55 +12,60 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
     <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
-
+    <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
   <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">Flasher</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <% if session[:current_user] %>
-              <li><strong><%= session[:current_user] %></strong><%= link_to "Logout", "/logout"  %></li>
-              <% else %>
-              <li><%= link_to "Login", "/login"  %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
+    <div id="wrap">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Flasher</a>
+            <div class="container nav-collapse">
+              <ul class="nav pull-right">
+                <% if session[:current_user] %>
+                <li><%= link_to "Home ("+session[:current_user]+")", "/home"  %></li>
+                <li><%= link_to "Logout", "/logout"  %></li>
+                <% else %>
+                <li><%= link_to "Login", "/login"  %></li>
+                <% end %>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
+
+      <div class="container">
+          <div class="row" id="main">
+            <div class="span12">
+               <%= yield %>
+            </div>
+          </div><!--/row-->
+      </div> <!-- /container -->
+      <div id="push"></div>
     </div>
 
-    <div class="container">
-        <div class="row">
-          <div class="span9">
-             <%= yield %>
-          </div>
-          <div class="span3">
-
-          </div><!--/span-->
-        </div><!--/row-->
-
+    <div id="#sticky_foot">
       <footer>
-        <p>&copy; Company 2012</p>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <p class="brand">&copy; Company 2012</p>
+            </div>
+          </div>
+        </div>
       </footer>
-
-    </div> <!-- /container -->
+    </div>
 
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "jquery-1.8.2.min" %>
 
   </body>
 </html>

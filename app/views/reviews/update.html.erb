@@ -1,0 +1,36 @@
+<div class="row cardinfo">
+  <div class="span4 offset2 folder">
+    <h1><%=h deck.name %></h1>
+  </div>
+  <div class="span2 offset2">
+    <div class="navinfo muted">
+      &#9166; Next flashcard
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span8 offset2 card">
+    <h2 class="question"><%=h card.question %></h2>
+
+    <p class="muted">You answered:</p>
+    <p class="answer my"><%=h review.answer %></p>
+
+    <p class="muted">The card says:</p>
+    <p class="answer"><%=h card.answer %></p>
+
+    <% if review.correct? %>
+      <div class="alert alert-success">
+        Great Job!
+        <br />
+        <%= onward_button %>
+      </div>
+    <% else %>
+      <div class="alert">
+        You'll get it next time!
+        <br />
+        <%= onward_button %>
+      </div>
+    <% end %>
+  </div>
+</div>

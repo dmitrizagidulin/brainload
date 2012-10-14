@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 	end
 	
 	def index
-		@users = User.list()
+		@users = User.all
 	end
 	
 	def new
