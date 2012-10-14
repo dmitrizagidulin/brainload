@@ -24,6 +24,13 @@ class UsersController < ApplicationController
 	
 	def home
 		@card_decks = CardDeck.find_by_index(:user_key, current_user.key)
+		@card_decks = @card_decks.sort_by {|c| c.name}
+		@user_decks_by_category = @card_decks.group_by(&:category_key)
+			
+		# Get a sorted list of only categories in which the user has decks
+		@user_categories = Category.all
+		@user_categories = @user_categories.reject { |c| c unless @user_decks_by_category.has_key? c.key }
+		@user_categories = @user_categories.sort_by { |c| c.name }
 	end
 	
 	def index
