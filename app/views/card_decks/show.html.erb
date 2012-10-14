@@ -2,43 +2,35 @@
 <h2><%= @card_deck.name %></h2>
 <p><%= @card_deck.description %></p>
 
-<div class="btn-toolbar">
-  <div class="btn">
-    <%= link_to image_tag('add.png', :alt => "Add Deck"), new_card_path(:card_deck_key => @card_deck.key) %>
-  </div>
-  <div class="btn">
-    <%= link_to image_tag('edit.png'), edit_card_deck_path(@card_deck) %>
-  </div>
-
-  <% card = @card_deck.cards.first %>
-  <% if card %>
-      <div class="btn">
-        <%= link_to image_tag('play.png'), review_path(card) %>
-      </div>
+<div class="btn-group">
+  <% unless @card_deck.empty? %>
+    <% first_card = @card_deck.cards.first %>
+    <%= link_to image_tag('play.png') + ' Review', review_path(first_card), class: 'btn btn-success' %>
   <% end %>
 
+  <%= link_to image_tag('edit.png') + ' Edit Deck Info', edit_card_deck_path(@card_deck), class: 'btn' %>
 
+  <%= link_to image_tag('add.png') + ' Add Cards', new_card_path(:card_deck_key => @card_deck.key), class: 'btn' %>
 </div>
-
-<div id="card_box">
+<div class="deck row" data-masonic="true">
   <% @card_deck.cards.each do |card| %>
-      <div class="card card_in_list">
+      <div class="card span4">
         <div class="card_options">
             <%= link_to image_tag('play.png'), review_path(card) %>
             <%= link_to image_tag('edit.png'), edit_card_path(card) %>
         </div>
-
-        <div id="card_front_key_<%= card.key %>" class="card_face_front">
-          <p class="q_a">
-          <%= link_to_function card.question, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
-          </p>
+        <div class="card_content">
+          <div id="card_front_key_<%= card.key %>" class="card_face front">
+            <p class="q_a">
+              <%=h card.question %>
+            </p>
+          </div>
+          <div id="card_back_key_<%= card.key %>" class="card_face back">
+            <p class="q_a">
+              <%=h card.answer %>
+            </p>
+          </div>
         </div>
-        <div id="card_back_key_<%= card.key %>" class="card_face_back">
-          <p class="q_a">
-            <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
-          </p>
-        </div>
-
       </div>
   <% end %>
 </div>
