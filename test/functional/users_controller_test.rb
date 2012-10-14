@@ -6,7 +6,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   def users
-    user_count = User.list()
+    user_count = User.all
   end
   
   test "should get index" do
