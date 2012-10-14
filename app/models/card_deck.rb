@@ -26,6 +26,10 @@ class CardDeck
     end
   end
   
+  def category_name
+    Category.name_for_key(self.category)
+  end
+  
   def public?
     !self.private?
   end
