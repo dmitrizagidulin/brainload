@@ -52,6 +52,8 @@ class CardDecksController < ApplicationController
   # PUT /card_decks/1
   # PUT /card_decks/1.json
   def update
+    logger.info params[:card_deck]
+
     @card_deck = CardDeck.find(params[:id])
 
     respond_to do |format|

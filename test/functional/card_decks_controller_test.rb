@@ -8,7 +8,8 @@ class CardDecksControllerTest < ActionController::TestCase
     @category.save!
     @card_deck = CardDeck.new(:user_key => @user.key,
                               :name => "Learn German",
-                              :description => "sample set of questions")
+                              :description => "sample set of questions",
+                              :category_key => @category.key)
     @card_deck.save!
     @card = Card.new(:card_deck_key => @card_deck.key,
                      :question => "this is a question",

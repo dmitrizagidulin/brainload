@@ -38,8 +38,10 @@ class CardsControllerTest < ActionController::TestCase
   end
 
   test "should update card" do
-    put :update, id: @card, card: {  }
-    assert_redirected_to card_path(assigns(:card))
+    put :update, id: @card, card: {:card_deck_key => @card_deck.key,
+                                   :question => "this is a question",
+                                   :answer => "this is an answer"  }
+    assert_redirected_to card_deck_path(assigns(:card_deck))
   end
 
   test "should destroy card" do
