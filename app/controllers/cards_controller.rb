@@ -1,17 +1,6 @@
 class CardsController < ApplicationController
   before_filter :require_user, only: [:new, :create, :edit, :update, :destroy]
 
-  # GET /cards/1
-  # GET /cards/1.json
-  def show
-    @card = Card.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @card }
-    end
-  end
-
   # GET /cards/new
   # GET /cards/new.json
   def new

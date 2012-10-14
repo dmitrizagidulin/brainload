@@ -32,11 +32,6 @@ class CardsControllerTest < ActionController::TestCase
     assert_redirected_to card_deck_path(assigns(:card_deck))
   end
 
-  test "should show card" do
-    get :show, id: @card
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @card
     assert_response :success
