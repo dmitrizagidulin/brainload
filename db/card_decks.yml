@@ -1,6 +1,7 @@
 - :name: Learn German
   :description: Most commonly used German words and phrases
   :deck_type: public
+  :category_key: foreign-languages
   :cards:
     - :question: Guten morgen
       :answer: Good morning
@@ -17,6 +18,7 @@
 - :name: Learn Dutch
   :description: Most commonly used Dutch words and phrases
   :deck_type: public
+  :category_key: foreign-languages
   :cards:
     - :question: Goede morgen
       :answer: Good morning
@@ -36,6 +38,7 @@
       :answer: is there dairy in this?
 - :name: Learn Russian (private test)
   :description: Russian words
+  :category_key: foreign-languages
   :deck_type: private
   :cards:
     - :question: Мама
