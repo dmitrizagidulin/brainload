@@ -1,8 +1,14 @@
-task :seed do
-  @user = User.new(:email => "bob@example.com", :password => "2asxlkwme")
-  @user.save!
+def seed_categories
+  seed_data = YAML.load(IO.read(File.dirname(__FILE__) + '/../../db/categories.yml'))
+  seed_data.each do |category|
 
+    @category = Category.new( :name => card_deck[:name],
+                              :url_slug => card_deck[:url_slug])
+    @category.save!
+  end
+end
 
+def seed_cards
   seed_data = YAML.load(IO.read(File.dirname(__FILE__) + '/../../db/card_decks.yml'))
   seed_data.each do |card_deck|
 
@@ -17,6 +23,14 @@ task :seed do
                :answer => card[:answer]).save!
     end
   end
+end
+
+task :seed do
+  @user = User.new(:email => "bob@example.com", :password => "2asxlkwme")
+  @user.save!
+
+  seed_categories
+  seed_cards
 end
 
 task :clear_decks do

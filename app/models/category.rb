@@ -12,4 +12,8 @@ class Category
   def card_decks
     CardDeck.find_by_index(:category_key, self.key)
   end
+  
+  def all
+    Category.find_by_index('$bucket','_')
+  end
 end
