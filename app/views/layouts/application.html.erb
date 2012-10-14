@@ -28,7 +28,7 @@
           </a>
           <a class="brand" href="/">Flasher</a>
           <div class="container nav-collapse">
-            <ul class="nav">
+            <ul class="nav pull-right">
               <% if session[:current_user] %>
               <li><strong><%= session[:current_user] %></strong><%= link_to "Logout", "/logout"  %></li>
               <% else %>
