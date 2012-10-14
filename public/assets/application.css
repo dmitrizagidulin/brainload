@@ -1,0 +1,248 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200);
+/* line 1, ../../app/assets/stylesheets/sticky_footer.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 5, ../../app/assets/stylesheets/sticky_footer.css.scss */
+#wrap {
+  padding-top: 0px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -42px;
+}
+
+/* line 13, ../../app/assets/stylesheets/sticky_footer.css.scss */
+#push, #sticky_foot {
+  height: 42px;
+}
+
+/* line 2, ../../app/assets/stylesheets/footer_style.css.scss */
+footer .navbar .container {
+  width: 1170px;
+}
+/* line 5, ../../app/assets/stylesheets/footer_style.css.scss */
+footer .navbar-inner {
+  border-radius: 0px;
+  border-width: 1px 0 0 0;
+}
+
+/* line 1, ../../app/assets/stylesheets/reviews.css.scss */
+.cardinfo {
+  margin-top: 20px;
+}
+/* line 3, ../../app/assets/stylesheets/reviews.css.scss */
+.cardinfo .folder h1 {
+  border-radius: 8px;
+  background-color: #FCF8E3;
+  border: 1px solid #FBEED5;
+  color: black;
+  padding-bottom: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: -10px;
+  display: inline-block;
+}
+/* line 14, ../../app/assets/stylesheets/reviews.css.scss */
+.cardinfo .navinfo {
+  padding-top: 20px;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+/* line 20, ../../app/assets/stylesheets/reviews.css.scss */
+.card {
+  background: #fdfdf3 url(/assets/card-background.png);
+  text-align: center;
+  box-shadow: 0px 4px 10px 5px #ccc;
+}
+/* line 25, ../../app/assets/stylesheets/reviews.css.scss */
+.card input[type='text'] {
+  font-size: 2em;
+  height: 2em;
+  font-family: "Marker Felt", "Lucida Handwriting", "Comic Sans", sans;
+}
+/* line 31, ../../app/assets/stylesheets/reviews.css.scss */
+.card .answer {
+  font-size: 1.5em;
+}
+/* line 34, ../../app/assets/stylesheets/reviews.css.scss */
+.card .answer.my {
+  font-family: "Marker Felt", "Lucida Handwriting", "Comic Sans", sans;
+}
+/* line 39, ../../app/assets/stylesheets/reviews.css.scss */
+.card .alert {
+  border-radius: 0;
+  padding: 8px 0;
+  margin: auto -4px 20px -4px;
+  box-shadow: 0px 2px 5px 0px #ccc;
+}
+
+/* line 47, ../../app/assets/stylesheets/reviews.css.scss */
+.study_btn {
+  font-size: 60%;
+  float: right;
+}
+
+/* line 7, ../../app/assets/stylesheets/application.css.scss */
+body {
+  background: white url(/assets/color-splat.jpg) no-repeat top center;
+}
+
+/* line 11, ../../app/assets/stylesheets/application.css.scss */
+#main {
+  padding-top: 35px;
+}
+
+/* line 15, ../../app/assets/stylesheets/application.css.scss */
+h1 {
+  font-family: "Titillium Web", Helvetica, Arial, sans;
+  font-weight: 400;
+}
+
+/* line 20, ../../app/assets/stylesheets/application.css.scss */
+.brand {
+  font-family: "Titillium Web", Helvetica, Arial, sans;
+  font-weight: 200;
+  font-size: 150%;
+}
+
+/* line 25, ../../app/assets/stylesheets/application.css.scss */
+.card_face_description {
+  font-style: italic;
+  visibility: hidden;
+}
+
+/* line 29, ../../app/assets/stylesheets/application.css.scss */
+.card_face_title {
+  border-bottom: 1px solid #ffffff;
+  width: 150px;
+  height: 20px;
+}
+
+/* line 35, ../../app/assets/stylesheets/application.css.scss */
+.card_face {
+  float: left;
+  font-size: 20pt;
+  font-weight: 400;
+  padding: 15px;
+  height: 50px;
+  width: 260px;
+  background-color: #eeeeff;
+  border: 1px solid #2c2c29;
+}
+
+/* line 46, ../../app/assets/stylesheets/application.css.scss */
+.card_face:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* line 50, ../../app/assets/stylesheets/application.css.scss */
+.card_face_front a:hover {
+  text-decoration: none;
+}
+
+/* line 53, ../../app/assets/stylesheets/application.css.scss */
+.card_face_back a:hover {
+  text-decoration: none;
+}
+
+/* line 56, ../../app/assets/stylesheets/application.css.scss */
+.card_face_front:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+/* line 60, ../../app/assets/stylesheets/application.css.scss */
+.card_face_back {
+  display: none;
+}
+
+/* line 64, ../../app/assets/stylesheets/application.css.scss */
+.provider_box {
+  float: left;
+  height: 100px;
+  width: 100px;
+  border: 1px solid #2c2c29;
+  padding: 15px;
+  font-weight: 800;
+}
+
+/* line 72, ../../app/assets/stylesheets/application.css.scss */
+.direct_login_box {
+  float: left;
+  height: 100px;
+  width: 250px;
+  border: 1px solid #2c2c29;
+  padding: 15px;
+}
+
+/* line 79, ../../app/assets/stylesheets/application.css.scss */
+.clear {
+  clear: both;
+}
+
+/* line 84, ../../app/assets/stylesheets/application.css.scss */
+.login_field {
+  width: 150px;
+}
+
+/* line 88, ../../app/assets/stylesheets/application.css.scss */
+.login_form_field_name {
+  text-align: left;
+}
+
+/* line 91, ../../app/assets/stylesheets/application.css.scss */
+.box_field_name {
+  width: 50px;
+}
+
+/* line 95, ../../app/assets/stylesheets/application.css.scss */
+.login_form {
+  border: 0px solid #000;
+}
+
+/* line 100, ../../app/assets/stylesheets/application.css.scss */
+.card_in_list {
+  float: left;
+  padding-top: 20px;
+  width: 250px;
+  height: 50px;
+  margin: 15px;
+}
+
+/* line 107, ../../app/assets/stylesheets/application.css.scss */
+.card_in_view {
+  float: left;
+  width: 450px;
+  height: 350px;
+  margin: 15px;
+}
+
+/* line 114, ../../app/assets/stylesheets/application.css.scss */
+.card_options {
+  float: right;
+  width: 35px;
+  margin-top: -10px;
+  height: 13px;
+  border: 0px solid #323e41;
+}
+
+/* line 121, ../../app/assets/stylesheets/application.css.scss */
+.card_option {
+  float: left;
+  width: 13px;
+  margin-top: -5px;
+}
+
+/* line 127, ../../app/assets/stylesheets/application.css.scss */
+.card_field {
+  width: 350px;
+}
+
+/* line 131, ../../app/assets/stylesheets/application.css.scss */
+.q_a {
+  font-size: 140%;
+}
