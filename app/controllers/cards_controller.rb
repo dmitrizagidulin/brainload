@@ -13,7 +13,7 @@ class CardsController < ApplicationController
 
   # GET /cards/1/edit
   def edit
-    @card = Card.find_for_user_and_key(current_user, params[:id])
+    @card = Card.find(params[:id])
   end
 
   # POST /cards
