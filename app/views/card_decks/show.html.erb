@@ -15,6 +15,7 @@
         <div id="card_back_key_<%= card.key %>" class="card_face_back">
         <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
         </div>
+          <div class="study_btn"><%= link_to 'study', review_path(card) %></div>
       </div>
   <% end %>
 </div>

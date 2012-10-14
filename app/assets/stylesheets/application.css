@@ -44,3 +44,8 @@ body {
 .card_face_back {
     display:none;
 }
+
+.study_btn {
+    font-size: 60%;
+    float: right;
+}
