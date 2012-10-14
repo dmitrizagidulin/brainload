@@ -4,7 +4,7 @@ class CardDeck
   property :name, String, presence: true, index: true
   property :description, String, presence: true, index: true
   property :user_key, String, presence: true, index: true
-  property :category_key, String, index: true
+  property :category_key, String, index: true, default: Category.uncategorized_key
   
   # deck_type is one of ['public', 'private']
   property :deck_type, String, index: true, default: 'private'
@@ -20,6 +20,18 @@ class CardDeck
 
   def cards
     Card.find_by_index(:card_deck_key, self.key)
+  end
+  
+  def category
+    if self.category_key.nil? or self.category_key.empty?
+      return Category.uncategorized_key
+    else
+      return self.category_key
+    end
+  end
+  
+  def category_name
+    Category.name_for_key(self.category)
   end
   
   def public?

@@ -27,6 +27,7 @@ class CardDecksController < ApplicationController
 
   # GET /card_decks/1/edit
   def edit
+    @categories = Category.select_options 
     @card_deck = CardDeck.find(params[:id])
   end
 
