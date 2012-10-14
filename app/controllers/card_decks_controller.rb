@@ -28,7 +28,7 @@ class CardDecksController < ApplicationController
   # GET /card_decks/1/edit
   def edit
     @categories = Category.select_options 
-    @card_deck = CardDeck.find_for_user_and_key(current_user, params[:id])
+    @card_deck = CardDeck.find(params[:id])
   end
 
   # POST /card_decks
@@ -51,7 +51,7 @@ class CardDecksController < ApplicationController
   # PUT /card_decks/1
   # PUT /card_decks/1.json
   def update
-    @card_deck = CardDeck.find_for_user_and_key(current_user, params[:id])
+    @card_deck = CardDeck.find(params[:id])
 
     respond_to do |format|
       if @card_deck.update_attributes(params[:card_deck])

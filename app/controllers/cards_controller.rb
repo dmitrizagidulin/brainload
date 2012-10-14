@@ -36,7 +36,7 @@ class CardsController < ApplicationController
   # PUT /cards/1
   # PUT /cards/1.json
   def update
-    @card = Card.find_for_user_and_key(current_user, params[:id])
+    @card = Card.find(params[:id])
 
     respond_to do |format|
       if @card.update_attributes(params[:card])
@@ -52,7 +52,7 @@ class CardsController < ApplicationController
   # DELETE /cards/1
   # DELETE /cards/1.json
   def destroy
-    @card = Card.find_for_user_and_key(current_user, params[:id])
+    @card = Card.find(params[:id])
     @card.destroy
 
     respond_to do |format|
