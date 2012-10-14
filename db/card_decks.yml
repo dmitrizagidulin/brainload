@@ -1,4 +1,4 @@
-- :name: Learn German
+- :name: German to English
   :description: Most commonly used German words and phrases
   :deck_type: public
   :category_key: foreign-languages
@@ -15,7 +15,7 @@
       :answer: You're welcome
     - :question: Wie spat ist es?
       :answer: What time is it?
-- :name: Learn Dutch
+- :name: Dutch to English
   :description: Most commonly used Dutch words and phrases
   :deck_type: public
   :category_key: foreign-languages
@@ -36,7 +36,7 @@
       :answer: i dont eat meat
     - :question: zit hier zuivel in?
       :answer: is there dairy in this?
-- :name: Learn Russian (private test)
+- :name: My Russian Words (private test)
   :description: Russian words
   :category_key: foreign-languages
   :deck_type: private
@@ -45,6 +45,66 @@
       :answer: Mom
     - :question: Папа
       :answer: Dad
-
-
+- :name: Russian to English
+  :description: Russian words
+  :category_key: foreign-languages
+  :deck_type: public
+  :cards:
+    - :question: Мама
+      :answer: Mom
+    - :question: Папа
+      :answer: Dad
+- :name: French to English
+  :description: French words
+  :category_key: foreign-languages
+  :deck_type: public
+  :cards:
+    - :question: bonjour
+      :answer: hello
+    - :question: au revoir
+      :answer: goodbye
+- :name: Ruby 1.9 keywords
+  :description: Ruby 1.9 keywords
+  :category_key: computer-science
+  :deck_type: public
+  :cards:
+    - :question: What is the Ruby equivalent to the C 'continue' statement, to skip to the next loop iteration?
+      :answer: next
+- :name: Python 2.7 keywords
+  :description: Python 2.7 keywords
+  :category_key: computer-science
+  :deck_type: public
+  :cards:
+    - :question: What is the Python loop control statement to skip to the next loop iteration?
+      :answer: continue
+- :name: World Country Capitals
+  :description: World Country Capitals
+  :category_key: education-us-k12
+  :deck_type: public
+  :cards:
+    - :question: Capital of France
+      :answer: Paris
+- :name: Calculus (Basic Derivatives)
+  :description: Calculus (Basic Derivatives)
+  :category_key: education-us-college
+  :deck_type: public
+  :cards:
+    - :question: d/dx(cx)
+      :answer: c
+- :name: Anatomy - Master Nerve List
+  :description: Anatomy - Master Nerve List
+  :category_key: medicine
+  :deck_type: public
+  :cards:
+    - :question: Transmits visual information from the retina to the brain
+      :answer: optic nerve
+    - :question: Alternative name for "optic nerve"
+      :answer: cranial nerve 2
+- :name: American Women Poets (20th century)
+  :description: American Women Poets (20th century)
+  :category_key: uncategorized
+  :deck_type: public
+  :cards:
+    - :question: This poet won the Pulitzer Prize for poetry in 1956. Her work is known for its descriptive style, often exploring themes of loneliness, travel and the search for home. 
+      :answer: Elizabeth Bishop
 
