@@ -11,6 +11,11 @@ class Category
     CardDeck.find_by_index(:category_key, self.key)
   end
   
+  def public_decks
+    all_decks = self.card_decks
+    public_decks = all_decks.reject {|d| d.private? }
+  end
+  
   def self.all
     Category.find_by_index('$bucket','_')
   end

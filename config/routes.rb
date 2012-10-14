@@ -4,6 +4,7 @@ R12Team241::Application.routes.draw do
   resources :card_decks
   resources :cards
   resources :users
+  resources :categories
 
   match 'home' => 'users#home', via: :get
   

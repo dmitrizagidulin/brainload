@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @category.name %></h2>
+
+<div>
+<ul>
+<% @category_decks.each do | card_deck | %>
+  <% first_card = card_deck.cards.first %>
+  <li><%= link_to card_deck.name, card_deck %>
+    <%= link_to 'study', review_path(first_card), class: 'btn small' %>
+  </li>
+<% end %>
+</ul>
+</div>
+
