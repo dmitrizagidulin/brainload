@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
     session[:current_user] = user.key
-    if user.email != user.uid
+    if auth['email'] || user.email.match(/@/)
       redirect_to '/'
     else
       redirect_to '/add_email/' + auth['uid']

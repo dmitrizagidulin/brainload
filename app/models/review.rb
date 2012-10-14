@@ -11,7 +11,7 @@ class Review
   end
 
   def correct?
-    answer == card.answer
+    answer.downcase == card.answer.downcase
   end
 
   def next

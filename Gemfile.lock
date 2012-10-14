@@ -117,9 +117,15 @@ GEM
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
     omniauth-github (1.0.3)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-google (1.0.2)
+      multi_json
+      omniauth (~> 1.0)
+      omniauth-oauth
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -202,7 +208,9 @@ DEPENDENCIES
   guard-test
   haml
   jquery-rails
+  omniauth-facebook
   omniauth-github
+  omniauth-google
   omniauth-twitter
   rails (= 3.2.8)
   ripple (= 1.0.0.beta2)

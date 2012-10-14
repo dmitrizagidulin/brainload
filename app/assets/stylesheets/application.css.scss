@@ -9,7 +9,7 @@ body {
 }
 
 #main {
-  padding-top: 25px;
+  padding-top: 35px;
 }
 
 h1 {
@@ -64,10 +64,41 @@ h1 {
 .provider_box {
     float:left;
     height:100px;
-    width:200px;
+    width:100px;
     border: 1px solid #2c2c29;
     padding: 15px;
 }
+.direct_login_box {
+  float:left;
+  height:100px;
+  width:250px;
+  border: 1px solid #2c2c29;
+  padding: 15px;
+}
 .clear {
     clear: both;
+}
+
+
+.login_field {
+  width: 150px;
+
+}
+.login_form_field_name {
+  text-align: left;
+}
+.box_field_name {
+  width: 50px;
+}
+
+.login_form {
+  border: 0px solid #000;
+
+}
+
+.card_in_list {
+  float:left;
+  width:250px;
+  height:50px;
+  margin:15px;
 }
