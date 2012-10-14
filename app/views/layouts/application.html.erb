@@ -30,7 +30,8 @@
           <div class="container nav-collapse">
             <ul class="nav pull-right">
               <% if session[:current_user] %>
-              <li><strong><%= session[:current_user] %></strong><%= link_to "Logout", "/logout"  %></li>
+              <li><%= link_to "Home ("+session[:current_user]+")", "/home"  %></li>
+              <li><%= link_to "Logout", "/logout"  %></li>
               <% else %>
               <li><%= link_to "Login", "/login"  %></li>
               <% end %>
