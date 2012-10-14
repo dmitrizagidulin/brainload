@@ -3,8 +3,14 @@
   <p style="margin-top: 2em;">Logged in. <%= link_to 'View Your Card Decks', '/home' %>.</p> 
 </div>
 <% else %>
-  <p style="margin-top: 2em;">Flash card review thing. IT'S TO THE LIMIT. 
-  Now please log in.</p>
+  <p style="margin-top: 2em;">Please <%= link_to 'Log In', '/login' %> with existing account. 
+  Or use one of the providers below.</p>
+      <div class="provider_box btn">
+        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+      </div>
+      <div class="provider_box btn">
+        <%= link_to "Sign in with Github", "/auth/github" %>
+      </div>
 <% end %>
 
 <h3>Public Decks</h3>

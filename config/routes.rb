@@ -12,7 +12,11 @@ R12Team241::Application.routes.draw do
     post 'login' => :create
     get 'logout' => :destroy
   end
-  
+
+  match "/auth/:provider/callback" => "sessions#create_from_callback"
+  match "/signout" => "sessions#destroy", :as => :signout
+  match "/add_email/:uid" => "sessions#add_email", :as => :add_email
+
 #  match 'login' => 'login#new', via: :get
 #  match 'login' => 'login#create', via: :post
 

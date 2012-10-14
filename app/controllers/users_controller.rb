@@ -19,14 +19,6 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	def home
-		user = current_user
-		if user.nil?
-			redirect_to login_url
-		end
-		@card_decks = CardDeck.find_by_index(:user_key, user.key)
-	end
-	
 	def index
 		@users = User.all
 	end
