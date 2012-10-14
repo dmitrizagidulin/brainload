@@ -1,18 +1,17 @@
 <% if current_user %>
 <div id="content_box">
-  <h2>Decks:</h2>
-  <ul id="card_deck_list">
-    <% @card_decks.each do |card_deck| %>
-        <li class="card_deck_face">
-           <span class="card_deck_face_title"><%=  link_to card_deck.name, card_deck %></span>
-          <span class="card_deck_face_description"><%=  card_deck.description %></span>
-        </li>
-    <% end %>
-  </ul>
-  <div class="card_deck_face">
-    <%= link_to image_tag("add.png"), new_card_deck_path() %>
-  </div>
+  <p style="margin-top: 2em;">Logged in. <%= link_to 'View Your Card Decks', '/home' %>.</p> 
 </div>
 <% else %>
-    # show signin box
+  <p style="margin-top: 2em;">Flash card review thing. IT'S TO THE LIMIT. 
+  Now please log in.</p>
 <% end %>
+
+<h3>Public Decks</h3>
+<ul>
+<% @public_decks.each do | card_deck | %>
+  <li><%= link_to card_deck.name, card_deck %>
+   <%= card_deck.description %>
+  </li>
+<% end %>
+</ul>

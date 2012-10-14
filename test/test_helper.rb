@@ -1,12 +1,20 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
+require 'ripple/test_server'
 require 'rails/test_help'
 
-require 'ripple/test_server'
+class ActiveSupport::TestCase	
+  def login_as_valid_user
+    session[:current_user] = 'bob@example.com'
+  end
 
-class ActiveSupport::TestCase
+  def logout
+    session.delete :current_user
+  end
 
-  # fixtures :all
+  def setup
+		login_as_valid_user if defined? session
+  end
 
 end
 

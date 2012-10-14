@@ -9,6 +9,9 @@ class CardTest < TestHelper
                               :description => "sample set of questions")
     @card_deck.save!
   end
+  
+  
+  
   test "should require values" do
     card = Card.new()
 

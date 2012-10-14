@@ -10,4 +10,8 @@ class User
 
   has_secure_password
   many :card_decks, :class_name => "CardDeck"
+  
+  def self.all
+    User.find_by_index('$bucket','_')
+  end
 end

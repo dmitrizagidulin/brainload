@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 <h2><%= @card_deck.name %></h2>
 <p><%= @card_deck.description %></p>
+
+  <div class="btn-toolbar">
+    <div class="btn">
+      <%= link_to image_tag("add.png") + " New Card", new_card_path(:card_deck_key => @card_deck.key) %>
+    </div>
+    <div class="btn">
+      <%= link_to "Edit Deck", edit_card_deck_path(@card_deck) %>
+    </div>
+  </div>
+
 <div id="card_box">
   <% @card_deck.cards.each do |card| %>
       <div class="card_face">
@@ -10,9 +20,8 @@
         <div id="card_back_key_<%= card.key %>" class="card_face_back">
         <%= link_to_function card.answer, "$('#card_back_key_#{card.key}').toggle();$('#card_front_key_#{card.key}').toggle();" %>
         </div>
+          <div class="study_btn"><%= link_to 'study', review_path(card) %></div>
       </div>
   <% end %>
-  <div>
-    <%= link_to image_tag("add.png"), new_card_path(:card_deck_key => @card_deck.key) %>
-  </div>
 </div>
+
