@@ -5,7 +5,7 @@ class User
   property :email, String, index: true
   key_on :email
   property :provider, String, index: true
-  property :uid, String, index: true
+  property :uid, String, index: true, default: proc { SecureRandom.uuid }
   property :name, String, index: true
 
   property :password_digest, String, presence: true
