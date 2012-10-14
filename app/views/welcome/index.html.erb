@@ -1,5 +1,4 @@
 <div id="content_box">
-<<<<<<< HEAD
   <% unless session[:current_user] %>
       <div class="provider_box btn">
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
@@ -29,20 +28,3 @@
       </ul>
 <% end %>
 </div>
-=======
-  <p style="margin-top: 2em;">Logged in. <%= link_to 'View Your Card Decks', '/home' %>.</p> 
-</div>
-<% else %>
-  <p style="margin-top: 2em;">Flash card review thing. IT'S TO THE LIMIT. 
-  Now please log in.</p>
-<% end %>
-
-<h3>Public Decks</h3>
-<ul>
-<% @public_decks.each do | card_deck | %>
-  <li><%= link_to card_deck.name, card_deck %>
-   <%= card_deck.description %>
-  </li>
-<% end %>
-</ul>
->>>>>>> origin/categories
