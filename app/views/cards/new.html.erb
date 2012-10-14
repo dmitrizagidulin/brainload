@@ -1,4 +1,10 @@
-<h1>New card</h1>
-<div class="card card_in_view">
- <%= render 'form' %>
+<div class="row cardinfo">
+  <div class="span4 offset2 folder">
+    <h1>Adding to <%=h CardDeck.find(params[:card_deck_key]).name %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="span8 offset2 card card_edit ">
+    <%= render 'form' %>
+  </div>
 </div>
