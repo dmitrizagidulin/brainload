@@ -17,7 +17,9 @@ class Review
 
   def next
     all_cards = Card.find_by_index :card_deck_key, card.card_deck_key
-    all_cards.reject{|c| c.key == self.card_key}.first.key
+    candidate = all_cards.reject{|c| c.key == self.card_key}.first
+    return nil if candidate.nil?
+    return candidate.key
   end
 
   def card
