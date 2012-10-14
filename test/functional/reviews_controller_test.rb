@@ -11,6 +11,7 @@ class ReviewsControllerTest < ActionController::TestCase
     @other_card = Card.create card_deck_key: @deck.key, question: 'ever', answer: 'ddd'
   end
   test "should get show" do
+    session[:current_user] = @user.key
     get :show, id: @card.key
     assert_response :success
   end
