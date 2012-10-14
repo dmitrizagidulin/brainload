@@ -1,6 +1,6 @@
 <% if session[:current_user] %>
 <div id="content_box">
-  <p style="margin-top: 2em;">Logged in. <%= link_to 'View Your Card Decks', '/home' %>.</p> 
+  <p style="margin-top: 2em;"><%= link_to 'View Your Card Decks', '/home' %>.</p> 
 </div>
 <% else %>
   <p style="margin-top: 2em;">Please <%= link_to 'Log In', '/login' %> with existing account. 
