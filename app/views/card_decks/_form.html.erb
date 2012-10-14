@@ -15,9 +15,7 @@
     <%= f.label :description %>
     <%= f.text_area :description, :rows => 5, :class=> "card_field"%><br />
 
-    <%= f.select :category_key, options_for_select(@categories, @card_deck.category), class: "inline" rescue nil %>
-    
-    &nbsp;&nbsp;
+    <%= f.select :category_key, options_for_select(@categories, (@card_deck.category rescue nil)|| ""), class: "inline" %><br />
 
     <label class="radio inline">
     <%= f.radio_button :deck_type, "private", :checked => @card_deck.private? %> Private
@@ -25,7 +23,7 @@
     <label class="radio inline">
     <%= f.radio_button :deck_type, "public", :checked => @card_deck.public? %> Public
     </label>
-    
+    <br />
     <div class="actions">
       <%= f.submit :value => "Save", :class=> "btn btn-primary" %>  |
      <% if @card_deck.key %>

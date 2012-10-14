@@ -18,6 +18,7 @@ class CardDecksController < ApplicationController
   # GET /card_decks/new
   # GET /card_decks/new.json
   def new
+    @categories = Category.select_options
     @card_deck = CardDeck.new
     respond_to do |format|
       format.html # new.html.erb
