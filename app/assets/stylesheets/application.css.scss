@@ -10,7 +10,7 @@ body {
 }
 
 #main {
-  padding-top: 42px;
+  padding-top: 53px;
 }
 
 h1 {
@@ -18,10 +18,13 @@ h1 {
   font-weight: 400;
 }
 
-.brand {
+.navbar .brand {
   font-family: "Titillium Web", Helvetica, Arial, sans;
   font-weight: 200;
-  font-size: 150%;
+  font-size: 200%;
+  img {
+    vertical-align: -5px;
+  }
 }
 
 
