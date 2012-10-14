@@ -19,7 +19,7 @@
     <div class="actions">
     <%= f.submit %>
     |<% if @card.key %>
-          <%= link_to 'Cancel', @card %>
+          <%= link_to 'Cancel', @card.card_deck %>
       <% else %>
           <%= link_to 'Cancel', card_deck_path(params[:card_deck_key]) %>
       <% end %>
