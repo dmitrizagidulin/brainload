@@ -17,12 +17,11 @@
     <%= f.hidden_field :card_deck_key, :value => params[:card_deck_key] %><br />
 
     <div class="actions">
-      <%= f.submit %>
-      |
+      <%= f.submit class: 'btn btn-primary' %>
       <% if @card.key %>
-          <%= link_to 'Cancel', @card.card_deck %>
+          <%= link_to 'Cancel', @card.card_deck, class: 'btn' %>
       <% else %>
-          <%= link_to 'Cancel', card_deck_path(params[:card_deck_key]) %>
+          <%= link_to 'Cancel', card_deck_path(params[:card_deck_key]), class: 'btn' %>
       <% end %>
 
     </div>

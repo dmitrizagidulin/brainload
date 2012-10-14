@@ -23,9 +23,9 @@
     </label>
     
     <div class="actions">
-      <%= f.submit :value => "Save", :class=> "btn" %>  |
+      <%= f.submit :value => "Save", :class=> "btn btn-primary" %>  |
      <% if @card_deck.key %>
-      <%= link_to 'Cancel', @card_deck %>
+      <%= link_to 'Cancel', @card_deck, class: 'btn' %>
      <% else %>
       <%= link_to 'Cancel', '/home' %>
      <% end %>
