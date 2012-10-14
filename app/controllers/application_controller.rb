@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     return session[:current_user] = nil
   end
 
+  def equivalent_user
+    current_user || NullUser.new
+  end
+
   def require_user
     return true unless current_user.nil?
 

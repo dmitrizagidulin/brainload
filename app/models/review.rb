@@ -3,9 +3,10 @@ class Review
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :card_key, :answer
+  attr_accessor :card_key, :answer, :user
 
   def initialize(attributes = {})
+    self.user = attributes[:user]
     self.card_key = attributes[:card_key]
     self.answer = attributes[:answer]
   end
@@ -20,7 +21,7 @@ class Review
   end
 
   def card
-    @card ||= Card.find card_key
+    @card ||= user.allowed_card card_key
   end
 
   def persisted?

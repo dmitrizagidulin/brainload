@@ -12,9 +12,27 @@ class User
   timestamps!
 
   has_secure_password
+
   def card_decks
     CardDeck.find_by_index(:user_key, self.key)
   end
+
+  def allowed_deck(key)
+    candidate = CardDeck.find key
+    return candidate if candidate.user_key == self.key
+    return candidate if candidate.deck_type == 'public'
+    return nil
+  end
+
+  def allowed_card(key)
+    candidate = Card.find key
+    deck = candidate.card_deck
+
+    return candidate if deck.user_key == self.key
+    return candidate if deck.deck_type == 'public'
+    return nil
+  end  
+
   def self.create_with_omniauth(auth)
     user = User.create(:provider => auth["provider"],
            :uid => auth["uid"],
@@ -30,6 +48,7 @@ class User
     user = User.find_by_index(:uid, uid).collect{|u| u if u.provider == provider}.compact.first
     user
   end
+
   def self.all
     User.find_by_index('$bucket','_')
   end
