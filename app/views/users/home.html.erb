@@ -6,7 +6,8 @@
   <ul id="card_deck_list">
     <% @card_decks.each do |card_deck| %>
         <li class="card_deck_face">
-           <span class="card_deck_face_title"><%=  link_to card_deck.name, card_deck %></span>
+          <span class="btn"><%= link_to 'Edit', edit_card_deck_path(card_deck) %></span>
+          <span class="card_deck_face_title"><%=  link_to card_deck.name, card_deck %></span>
           <span class="card_deck_face_description"><%=  card_deck.description %></span>
         </li>
     <% end %>
