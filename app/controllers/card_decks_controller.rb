@@ -18,7 +18,9 @@ class CardDecksController < ApplicationController
   # GET /card_decks/new
   # GET /card_decks/new.json
   def new
-    @card_deck = CardDeck.new
+    @card_deck = CardDeck.new()
+    @category = Category.find_by_index('$bucket','_').first
+    @card_deck.category_key = @category.key
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @card_deck }
@@ -35,7 +37,7 @@ class CardDecksController < ApplicationController
   # POST /card_decks.json
   def create
     logger.info params[:card_deck]
-    @card_deck = CardDeck.new(params[:card_deck].merge({:user_key => current_user}))
+    @card_deck = CardDeck.new(params[:card_deck].merge({:user_key => session[:current_user]}))
 
     respond_to do |format|
       if @card_deck.save!

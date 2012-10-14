@@ -4,6 +4,8 @@ class CardDecksControllerTest < ActionController::TestCase
   setup do
     @user = User.new(:email => "bob@example.com", :password => "2asxlkwme")
     @user.save!
+    @category = Category.new(:name => "default category", :url_slug => "category_slug")
+    @category.save!
     @card_deck = CardDeck.new(:user_key => @user.key,
                               :name => "Learn German",
                               :description => "sample set of questions")
@@ -29,7 +31,9 @@ class CardDecksControllerTest < ActionController::TestCase
     deck_count = decks.length
     post :create, :card_deck => { :user_key => @user.key,
                                   :name => "Learn German",
-                                  :description => "sample set of questions"  }
+                                  :description => "sample set of questions",
+                                  :category_key => @category}
+
     assert decks.length > deck_count
     assert_redirected_to card_deck_path(assigns(:card_deck))
   end
