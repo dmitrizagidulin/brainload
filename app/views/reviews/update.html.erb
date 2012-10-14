@@ -1,6 +1,8 @@
 <div class="row cardinfo">
   <div class="span4 offset2 folder">
-    <h1><%=h deck.name %></h1>
+    <h1>
+      <%= link_to deck.name, card_deck_path(deck.key) %>
+    </h1>
   </div>
   <div class="span2 offset2">
     <div class="navinfo muted">

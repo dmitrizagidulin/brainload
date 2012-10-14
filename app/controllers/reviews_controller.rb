@@ -3,11 +3,9 @@ class ReviewsController < ApplicationController
   helper_method :review, :card, :deck
 
   def show
-    @review = Review.new card_key: params[:id]
   end
 
   def update
-    @review = Review.new card_key: params[:id], answer: params[:review][:answer]
   end
 
   private
@@ -16,8 +14,8 @@ class ReviewsController < ApplicationController
   end
 
   def review
-    review_attrs = {card_key: params[:id], user: equivalent_user}.reverse_merge params[:review]
-    @review ||= Review.new review_attrs
+    review_attrs = params[:review] || {}
+    @review ||= Review.new review_attrs.merge(card_key: params[:id], user: equivalent_user)
   end
 
   def card

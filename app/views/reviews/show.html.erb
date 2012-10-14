@@ -1,6 +1,8 @@
 <div class="row cardinfo">
   <div class="span4 offset2 folder">
-    <h1><%=h deck.name %></h1>
+    <h1>
+      <%= link_to deck.name, card_deck_path(deck.key) %>
+    </h1>
   </div>
   <div class="span2 offset2">
     <div class="navinfo muted">
@@ -14,7 +16,7 @@
   <div class="span8 offset2 card">
     <h2 class="question"><%=h card.question %></h2>
 
-    <%= form_for @review, url: review_path(@review.id) do |r| %>
+    <%= form_for review, url: review_path(review.id) do |r| %>
       <%= r.text_field :answer, placeholder: 'Enter answer', class: 'span6', autofocus: 'autofocus' %>
       <br />
       <%= r.submit 'Check Answer', class: 'btn btn-default' %>
