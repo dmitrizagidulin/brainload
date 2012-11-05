@@ -25,3 +25,16 @@
     <% end %>
   </ul>
 <% end %>
+
+<% if @saved_decks and @saved_decks.length > 0 %>
+  <h3>Saved Decks</h3>
+  <ul id="card_deck_list_saved" class="unstyled">
+  <% @saved_decks.each do | card_deck | %>
+        <li class="card_deck_face">
+
+<%= card_deck.name.to_s %>
+        </li>
+
+  <% end %>
+  </ul>
+<% end %>

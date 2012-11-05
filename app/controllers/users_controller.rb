@@ -31,6 +31,10 @@ class UsersController < ApplicationController
 		@user_categories = Category.all
 		@user_categories = @user_categories.reject { |c| c unless @user_decks_by_category.has_key? c.key }
 		@user_categories = @user_categories.sort_by { |c| c.name }
+			
+		@saved_deck_keys = current_user.saved_deck_keys
+		@saved_decks = CardDeck.find_by_index('$bucket','_')
+		@saved_decks = @saved_decks.reject { |c| c unless current_user.has_saved_deck c.key }
 	end
 	
 	def index
